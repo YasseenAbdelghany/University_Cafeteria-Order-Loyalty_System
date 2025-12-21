@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="app.gui.student.controllers.OrderPaymentController"
+            styleClass="root" stylesheets="@../../css/themes/student-theme.css">
+    
+    <!-- Top: Header -->
+    <top>
+        <VBox styleClass="header-section">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Label text="Order Payment" styleClass="header-label"/>
+            <Label fx:id="studentInfoLabel" text="Student: Loading..." styleClass="subheader-label"/>
+        </VBox>
+    </top>
+    
+    <!-- Center: Order Summary and Payment Options -->
+    <center>
+        <VBox spacing="20" styleClass="content-section">
+            <padding>
+                <Insets top="20" right="40" bottom="20" left="40"/>
+            </padding>
+            
+            <!-- Order Summary Section -->
+            <VBox spacing="10" styleClass="card">
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
+                
+                <Label text="Order Summary" styleClass="section-label"/>
+                
+                <ListView fx:id="orderItemsListView" prefHeight="200" VBox.vgrow="SOMETIMES"/>
+                
+                <Separator/>
+                
+                <!-- Totals -->
+                <HBox spacing="10">
+                    <Label text="Subtotal:" styleClass="label-bold"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="subtotalLabel" text="0.00 EGP" styleClass="label-bold"/>
+                </HBox>
+                
+                <HBox spacing="10">
+                    <Label text="Discount:" styleClass="success-message"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="discountLabel" text="-0.00 EGP" styleClass="success-message"/>
+                </HBox>
+                
+                <Separator/>
+                
+                <HBox spacing="10">
+                    <Label text="Total:" styleClass="header-label-small"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="totalLabel" text="0.00 EGP" styleClass="header-label-small"/>
+                </HBox>
+            </VBox>
+            
+            <!-- Free Products Section -->
+            <VBox fx:id="freeProductsSection" spacing="10" styleClass="card" managed="false" visible="false">
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
+                
+                <Label text="🎁 Items You Can Get for FREE with Your Points!" styleClass="section-label" 
+                       style="-fx-text-fill: #FFD700; -fx-font-weight: bold;"/>
+                
+                <Label fx:id="freeProductsInfoLabel" text="You have enough points to get these items completely free!" 
+                       styleClass="info-label" wrapText="true"/>
+                
+                <ListView fx:id="freeProductsListView" prefHeight="120" styleClass="free-products-list"/>
+                
+                <Label text="💡 Tip: Add any of these items to your cart and redeem points at checkout!" 
+                       styleClass="info-label" wrapText="true" style="-fx-font-style: italic;"/>
+            </VBox>
+            
+            <!-- Payment Options Section -->
+            <VBox spacing="15" styleClass="card">
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
+                
+                <Label text="Payment Options" styleClass="section-label"/>
+                
+                <!-- Payment Method Selection -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Payment Method:" prefWidth="150"/>
+                    <ComboBox fx:id="paymentMethodComboBox" styleClass="combo-box" prefWidth="250"/>
+                </HBox>
+                
+                <!-- Loyalty Points Redemption -->
+                <VBox spacing="10">
+                    <Label text="Loyalty Points" styleClass="label-bold"/>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Available Points:" prefWidth="150"/>
+                        <Label fx:id="availablePointsLabel" text="0" styleClass="label-bold"/>
+                    </HBox>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Max Redeemable:" prefWidth="150"/>
+                        <Label fx:id="maxRedeemablePointsLabel" text="0" styleClass="label-bold"/>
+                        <Label text="(for this order)" styleClass="info-label"/>
+                    </HBox>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Points to Earn:" prefWidth="150"/>
+                        <Label fx:id="pointsToEarnLabel" text="0" styleClass="success-message"/>
+                        <Label text="(1 point per 10 EGP)" styleClass="info-label"/>
+                    </HBox>
+                    
+                    <Separator/>
+                    
+                    <Label text="Redeem Points for Discount" styleClass="label-bold"/>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Points to Redeem:" prefWidth="150"/>
+                        <Spinner fx:id="pointsRedemptionSpinner" prefWidth="150" 
+                                 editable="true" min="0" max="0" initialValue="0"/>
+                        <Label text="(1 point = 0.10 EGP)" styleClass="info-label"/>
+                    </HBox>
+                    
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Discount from Points:" prefWidth="150"/>
+                        <Label fx:id="pointsDiscountLabel" text="0.00 EGP" styleClass="success-message"/>
+                    </HBox>
+                </VBox>
+                
+                <Separator/>
+                
+                <!-- Final Total After Points -->
+                <HBox spacing="10">
+                    <Label text="Final Total:" styleClass="header-label-small"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="finalTotalLabel" text="0.00 EGP" styleClass="header-label-small"/>
+                </HBox>
+            </VBox>
+            
+        </VBox>
+    </center>
+    
+    <!-- Bottom: Action Buttons -->
+    <bottom>
+        <HBox spacing="15" alignment="CENTER" styleClass="button-bar">
+            <padding>
+                <Insets top="20" right="40" bottom="20" left="40"/>
+            </padding>
+            
+            <Button text="Back to Menu" onAction="#handleBack" 
+                    styleClass="secondary-button" prefWidth="150"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Confirm Payment" onAction="#handleConfirmPayment" 
+                    styleClass="primary-button" prefWidth="200"/>
+        </HBox>
+    </bottom>
+    
+</BorderPane>

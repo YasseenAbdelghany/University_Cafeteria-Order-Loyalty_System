@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="1080" prefWidth="1920" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="app.gui.admin.controllers.NotificationManagerDashboardController"
+            stylesheets="@../../css/themes/admin-theme.css">
+    
+    <top>
+        <VBox styleClass="header">
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Label fx:id="welcomeLabel" text="Notification Manager Dashboard" styleClass="header-title">
+                    <font><Font size="24" /></font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="Logout" onAction="#handleLogout" styleClass="secondary-button" />
+            </HBox>
+        </VBox>
+    </top>
+    
+    <center>
+        <SplitPane dividerPositions="0.4">
+            <VBox spacing="10" styleClass="content-section">
+                <padding><Insets top="20" right="20" bottom="20" left="20" /></padding>
+                
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="Students" styleClass="section-title">
+                        <font><Font size="18" /></font>
+                    </Label>
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button text="Refresh" onAction="#handleLoadStudents" styleClass="secondary-button" />
+                </HBox>
+                
+                <TableView fx:id="studentsTable" VBox.vgrow="ALWAYS" styleClass="table-view">
+                    <columns>
+                        <TableColumn fx:id="idColumn" text="ID" prefWidth="60" />
+                        <TableColumn fx:id="nameColumn" text="Name" prefWidth="150" />
+                        <TableColumn fx:id="emailColumn" text="Email" prefWidth="180" />
+                    </columns>
+                </TableView>
+            </VBox>
+            
+            <VBox spacing="20" styleClass="content-section">
+                <padding><Insets top="20" right="20" bottom="20" left="20" /></padding>
+                
+                <!-- Send to Individual Student -->
+                <VBox spacing="15">
+                    <Label text="Send Notification to Student" styleClass="section-title">
+                        <font><Font size="18" /></font>
+                    </Label>
+                    
+                    <Separator />
+                    
+                    <GridPane hgap="10" vgap="10">
+                        <Label text="Student ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label" />
+                        <TextField fx:id="studentIdField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="text-field" />
+                        
+                        <Label text="Student Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label" />
+                        <TextField fx:id="studentNameField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="text-field" />
+                        
+                        <columnConstraints>
+                            <ColumnConstraints minWidth="100" />
+                            <ColumnConstraints hgrow="ALWAYS" />
+                        </columnConstraints>
+                    </GridPane>
+                    
+                    <Label text="Message:" />
+                    <TextArea fx:id="messageArea" wrapText="true" prefRowCount="4" />
+                    
+                    <HBox spacing="10">
+                        <Button text="Send Notification" onAction="#handleSendNotification" styleClass="primary-button" HBox.hgrow="ALWAYS" />
+                        <Button text="Clear" onAction="#handleClear" styleClass="secondary-button" HBox.hgrow="ALWAYS" />
+                    </HBox>
+                </VBox>
+                
+                <Separator />
+                
+                <!-- Broadcast to All Students -->
+                <VBox spacing="15">
+                    <Label text="Broadcast to All Students" styleClass="section-title">
+                        <font><Font size="18" /></font>
+                    </Label>
+                    
+                    <Separator />
+                    
+                    <Label text="Broadcast Message:" />
+                    <TextArea fx:id="broadcastMessageArea" wrapText="true" prefRowCount="4" />
+                    
+                    <Button text="Broadcast to All" onAction="#handleBroadcastNotification" styleClass="primary-button" maxWidth="Infinity" />
+                </VBox>
+            </VBox>
+        </SplitPane>
+    </center>
+</BorderPane>

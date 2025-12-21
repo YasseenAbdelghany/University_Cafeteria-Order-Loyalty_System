@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="app.gui.controllers.ServiceLoginController"
+      alignment="CENTER"
+      spacing="20"
+      styleClass="root"
+      stylesheets="@../css/cafeteria-theme.css">
+    
+    <padding>
+        <Insets top="40" right="40" bottom="40" left="40"/>
+    </padding>
+    
+    <!-- Title -->
+    <Label text="Service Manager Login" styleClass="header-label"/>
+    
+    <!-- Login Form Card -->
+    <VBox spacing="15" styleClass="card" maxWidth="400">
+        <padding>
+            <Insets top="30" right="30" bottom="30" left="30"/>
+        </padding>
+        
+        <!-- Manager Type Selection -->
+        <VBox spacing="5">
+            <Label text="Manager Type:"/>
+            <ComboBox fx:id="managerTypeComboBox" promptText="Select Manager Type" maxWidth="Infinity"/>
+        </VBox>
+        
+        <!-- Username Field -->
+        <VBox spacing="5">
+            <Label text="Username:"/>
+            <TextField fx:id="usernameField" promptText="Enter username"/>
+        </VBox>
+        
+        <!-- Password Field -->
+        <VBox spacing="5">
+            <Label text="Password:"/>
+            <PasswordField fx:id="passwordField" promptText="Enter password"/>
+        </VBox>
+        
+        <!-- Login Button -->
+        <Button text="Login" onAction="#handleLogin" styleClass="primary-button" maxWidth="Infinity"/>
+    </VBox>
+    
+    <!-- Back Button -->
+    <Button text="Back to Main Menu" onAction="#handleBack" styleClass="secondary-button"/>
+    
+</VBox>

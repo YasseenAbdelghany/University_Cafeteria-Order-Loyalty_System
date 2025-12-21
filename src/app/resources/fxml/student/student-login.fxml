@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="1080" prefWidth="1920" stylesheets="@../../css/themes/student-theme.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.gui.student.controllers.StudentLoginController">
+    
+    <!-- Background Image - Responsive -->
+    <ImageView fitHeight="1282.0" fitWidth="2063.0" preserveRatio="false">
+        <image>
+            <Image backgroundLoading="true" url="@../../images/CafeteriaLogin.jpg" />
+        </image>
+    </ImageView>
+    
+    <!-- Dark Overlay for better text visibility -->
+    <Region styleClass="overlay-dark" />
+    
+    <!-- Main Content Container -->
+    <HBox alignment="CENTER" spacing="100" StackPane.alignment="CENTER">
+        <padding>
+            <Insets bottom="50" left="50" right="50" top="50" />
+        </padding>
+      <AnchorPane prefHeight="1182.0" prefWidth="1279.0">
+         <children>
+               <Label alignment="TOP_LEFT" contentDisplay="TOP" layoutX="9.0" layoutY="-23.0" styleClass="coffee-icon" text="☕">
+                   <font>
+                       <Font size="80" />
+                   </font>
+               </Label>
+               
+                                                                           <Label layoutX="41.0" layoutY="67.0" prefHeight="58.0" prefWidth="307.0" styleClass="welcome-brand" text="Coffee &amp; More">
+                   <font>
+                       <Font name="System Bold" size="25.0" />
+                   </font>
+               </Label>
+               
+                     <Label layoutX="-261.0" layoutY="453.0" styleClass="welcome-title" text="                     Welcome to Our Cafeteria System!" wrapText="true">
+                   <font>
+                       <Font name="System Bold Italic" size="55.0" />
+                   </font>
+               </Label>
+               
+               <VBox layoutX="-254.0" layoutY="548.0" prefHeight="234.0" prefWidth="1595.0" spacing="15">
+                   <Label styleClass="welcome-text" text="                                                   Grab your favorite meal, order with ease">
+                       <font>
+                           <Font name="System Bold" size="32" />
+                       </font>
+                   </Label>
+                   
+                               <Label styleClass="welcome-text" text="                                                                 and enjoy a seamless experience.">
+                       <font>
+                           <Font name="System Bold" size="32" />
+                       </font>
+                   </Label>
+                   
+                      <Label styleClass="welcome-text" text="                                                                      Earn loyalty points with every purchase">
+                       <font>
+                           <Font name="System Bold" size="32" />
+                       </font>
+                   </Label>
+                   
+                   <Label styleClass="welcome-text" text="                                                                                     your taste deserves rewards! 🍽✨">
+                       <font>
+                           <Font name="System Bold" size="32" />
+                       </font>
+                   </Label>
+               </VBox>
+         </children>
+      </AnchorPane>
+        
+        <!-- Right Side - Login/Register Forms -->
+        <VBox alignment="CENTER" maxWidth="631.0" prefHeight="1182.0" prefWidth="492.0" spacing="30" HBox.hgrow="NEVER">
+            <!-- Login Title -->
+            <Label styleClass="login-title" text="Student Member Login">
+                <font>
+                    <Font name="System Bold" size="42" />
+                </font>
+            </Label>
+            
+            <Label styleClass="login-subtitle" text="Coffee Build Your Mind">
+                <font>
+                    <Font name="System Bold" size="20" />
+                </font>
+            </Label>
+            
+            <!-- Login Card -->
+            <VBox fx:id="loginCard" alignment="CENTER" maxWidth="550" prefHeight="381.0" prefWidth="350.0" spacing="30" styleClass="login-card">
+                <padding>
+                    <Insets bottom="50" left="60" right="60" top="50" />
+                </padding>
+                
+                <!-- Student ID Input -->
+                <VBox spacing="12" styleClass="input-container">
+                    <Label styleClass="input-label" text="Enter your Student ID">
+                        <font>
+                            <Font size="15" />
+                        </font>
+                    </Label>
+                    
+                    <HBox alignment="CENTER_LEFT" minHeight="60" spacing="15" styleClass="input-box">
+                        <Label styleClass="input-icon" text="🎓">
+                            <font>
+                                <Font size="24" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="loginStudentCodeField" minHeight="60" promptText="ST001" styleClass="modern-input" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font size="18" />
+                            </font>
+                        </TextField>
+                    </HBox>
+                </VBox>
+                
+                <!-- Password Input -->
+                <VBox spacing="12" styleClass="input-container">
+                    <Label styleClass="input-label" text="Enter your Password">
+                        <font>
+                            <Font size="15" />
+                        </font>
+                    </Label>
+                    
+                    <HBox alignment="CENTER_LEFT" minHeight="60" spacing="15" styleClass="input-box">
+                        <Label styleClass="input-icon" text="🔒">
+                            <font>
+                                <Font size="24" />
+                            </font>
+                        </Label>
+                        <PasswordField fx:id="loginPasswordField" minHeight="60" promptText="Enter password" styleClass="modern-input" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font size="18" />
+                            </font>
+                        </PasswordField>
+                    </HBox>
+                </VBox>
+                
+                <!-- Login Button -->
+                <Button fx:id="loginButton" maxWidth="Infinity" minHeight="60" onAction="#handleLogin" styleClass="coffee-button" text="Login">
+                    <font>
+                        <Font name="System Bold" size="20" />
+                    </font>
+                </Button>
+                
+                <!-- Register Link -->
+                <Label onMouseClicked="#handleShowRegister" styleClass="register-link" text="Not a member? Sign up now">
+                    <font>
+                        <Font size="14" />
+                    </font>
+                </Label>
+            </VBox>
+            
+            <!-- Register Card (Hidden by default) -->
+            <VBox fx:id="registerCard" alignment="CENTER" managed="false" maxWidth="550" spacing="30" styleClass="register-dialog" visible="false">
+                <padding>
+                    <Insets bottom="50" left="60" right="60" top="50" />
+                </padding>
+                
+                <Label styleClass="dialog-title" text="Create Account">
+                    <font>
+                        <Font name="System Bold" size="36" />
+                    </font>
+                </Label>
+                
+                <!-- Name Input -->
+                <VBox spacing="12">
+                    <Label styleClass="input-label" text="Full Name">
+                        <font>
+                            <Font size="15" />
+                        </font>
+                    </Label>
+                    <HBox alignment="CENTER_LEFT" minHeight="60" spacing="15" styleClass="input-box">
+                        <Label styleClass="input-icon" text="👤">
+                            <font>
+                                <Font size="24" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="registerNameField" minHeight="60" promptText="Enter your full name" styleClass="modern-input" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font size="18" />
+                            </font>
+                        </TextField>
+                    </HBox>
+                </VBox>
+                
+                <!-- Phone Input -->
+                <VBox spacing="12">
+                    <Label styleClass="input-label" text="Phone Number">
+                        <font>
+                            <Font size="15" />
+                        </font>
+                    </Label>
+                    <HBox alignment="CENTER_LEFT" minHeight="60" spacing="15" styleClass="input-box">
+                        <Label styleClass="input-icon" text="📱">
+                            <font>
+                                <Font size="24" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="registerPhoneField" minHeight="60" promptText="Enter your phone number" styleClass="modern-input" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font size="18" />
+                            </font>
+                        </TextField>
+                    </HBox>
+                </VBox>
+                
+                <!-- Password Input -->
+                <VBox spacing="12">
+                    <Label styleClass="input-label" text="Password">
+                        <font>
+                            <Font size="15" />
+                        </font>
+                    </Label>
+                    <HBox alignment="CENTER_LEFT" minHeight="60" spacing="15" styleClass="input-box">
+                        <Label styleClass="input-icon" text="🔒">
+                            <font>
+                                <Font size="24" />
+                            </font>
+                        </Label>
+                        <PasswordField fx:id="registerPasswordField" minHeight="60" promptText="Create a password" styleClass="modern-input" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font size="18" />
+                            </font>
+                        </PasswordField>
+                    </HBox>
+                </VBox>
+                
+                <!-- Confirm Password Input -->
+                <VBox spacing="12">
+                    <Label styleClass="input-label" text="Confirm Password">
+                        <font>
+                            <Font size="15" />
+                        </font>
+                    </Label>
+                    <HBox alignment="CENTER_LEFT" minHeight="60" spacing="15" styleClass="input-box">
+                        <Label styleClass="input-icon" text="🔒">
+                            <font>
+                                <Font size="24" />
+                            </font>
+                        </Label>
+                        <PasswordField fx:id="registerConfirmPasswordField" minHeight="60" promptText="Confirm your password" styleClass="modern-input" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font size="18" />
+                            </font>
+                        </PasswordField>
+                    </HBox>
+                </VBox>
+                
+                <!-- Register Button -->
+                <Button fx:id="registerButton" maxWidth="Infinity" minHeight="60" onAction="#handleRegister" styleClass="coffee-button" text="Create Account">
+                    <font>
+                        <Font name="System Bold" size="20" />
+                    </font>
+                </Button>
+                
+                <!-- Back to Login -->
+                <Label onMouseClicked="#handleBackToLogin" styleClass="back-link" text="← Back to Login">
+                    <font>
+                        <Font size="14" />
+                    </font>
+                </Label>
+            </VBox>
+        </VBox>
+    </HBox>
+    
+</StackPane>

@@ -1,0 +1,49 @@
+/* ============================================
+   CSS Variables - Color System, Spacing, Fonts
+   ============================================ */
+
+/* Root variables - will be overridden by themes */
+.root {
+    /* Spacing Scale (8px base) */
+    -fx-space-1: 4px;
+    -fx-space-2: 8px;
+    -fx-space-3: 12px;
+    -fx-space-4: 16px;
+    -fx-space-5: 20px;
+    -fx-space-6: 24px;
+    -fx-space-8: 32px;
+    -fx-space-10: 40px;
+    -fx-space-12: 48px;
+    -fx-space-16: 64px;
+    
+    /* Font Families */
+    -fx-font-family-primary: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    -fx-font-family-heading: "Segoe UI Semibold", sans-serif;
+    -fx-font-family-mono: "Consolas", "Courier New", monospace;
+    
+    /* Font Sizes */
+    -fx-text-xs: 12px;
+    -fx-text-sm: 14px;
+    -fx-text-base: 16px;
+    -fx-text-lg: 18px;
+    -fx-text-xl: 20px;
+    -fx-text-2xl: 24px;
+    -fx-text-3xl: 30px;
+    -fx-text-4xl: 36px;
+    
+    /* Border Radius */
+    -fx-radius-sm: 4px;
+    -fx-radius-md: 8px;
+    -fx-radius-lg: 12px;
+    -fx-radius-xl: 16px;
+    
+    /* Shadows */
+    -fx-shadow-sm: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0, 0, 1);
+    -fx-shadow-md: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0, 0, 2);
+    -fx-shadow-lg: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 15, 0, 0, 4);
+    
+    /* Transition Duration */
+    -fx-transition-fast: 0.15s;
+    -fx-transition-base: 0.2s;
+    -fx-transition-slow: 0.3s;
+}

@@ -1,0 +1,774 @@
+/* ============================================
+   Student Theme - Coffee/Brown Professional Design
+   Warm coffee colors matching CafeteriaLogin.jpg
+   ============================================ */
+
+.root {
+    /* Primary Colors - Coffee Browns */
+    -fx-primary: #6F4E37;           /* Coffee Brown */
+    -fx-primary-dark: #4A3728;      /* Dark Coffee */
+    -fx-primary-light: #8B6F47;     /* Light Coffee */
+    -fx-primary-lighter: #A0826D;   /* Cream Coffee */
+    
+    /* Secondary Colors - Warm Tones */
+    -fx-secondary: #D4A574;         /* Caramel */
+    -fx-secondary-dark: #B8956A;    /* Dark Caramel */
+    -fx-secondary-light: #E6C9A8;   /* Light Caramel */
+    
+    /* Accent Color - Warm Orange */
+    -fx-accent: #CD853F;            /* Peru/Tan */
+    -fx-accent-light: #DEB887;      /* Burlywood */
+    
+    /* Status Colors */
+    -fx-success: #6B8E23;           /* Olive Green */
+    -fx-success-dark: #556B2F;      /* Dark Olive */
+    -fx-success-light: #9ACD32;     /* Yellow Green */
+    
+    -fx-warning: #DAA520;           /* Goldenrod */
+    -fx-warning-dark: #B8860B;      /* Dark Goldenrod */
+    -fx-warning-light: #FFD700;     /* Gold */
+    
+    -fx-error: #A0522D;             /* Sienna */
+    -fx-error-dark: #8B4513;        /* Saddle Brown */
+    -fx-error-light: #CD853F;       /* Peru */
+    
+    -fx-info: #5F9EA0;              /* Cadet Blue */
+    -fx-info-dark: #4682B4;         /* Steel Blue */
+    -fx-info-light: #87CEEB;        /* Sky Blue */
+    
+    /* Background Colors */
+    -fx-background: #FFF8DC;        /* Cornsilk */
+    -fx-background-alt: #FAEBD7;    /* Antique White */
+    -fx-surface: #FFFFFF;           /* White */
+    -fx-surface-hover: #FFF8DC;     /* Cornsilk */
+    
+    /* Text Colors */
+    -fx-text-primary: #3E2723;      /* Dark Brown */
+    -fx-text-secondary: #5D4037;    /* Brown */
+    -fx-text-muted: #8D6E63;        /* Light Brown */
+    -fx-text-disabled: #BCAAA4;     /* Very Light Brown */
+    
+    /* Border Colors */
+    -fx-border-color: #D7CCC8;      /* Light Brown Grey */
+    -fx-border-color-dark: #A1887F; /* Brown Grey */
+    -fx-border-color-light: #EFEBE9;/* Very Light Brown Grey */
+    
+    /* Overlay Colors */
+    -fx-overlay: rgba(62, 39, 35, 0.7);
+    -fx-overlay-light: rgba(62, 39, 35, 0.4);
+}
+
+/* Apply background to root */
+.root {
+    -fx-background-color: -fx-background;
+}
+
+/* ============================================
+   LOGIN PAGE SPECIFIC STYLES
+   ============================================ */
+
+/* Dark overlay for login page */
+.overlay-dark {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-min-width: 100%;
+    -fx-min-height: 100%;
+}
+
+/* Login header */
+.login-header {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 15, 0, 0, 3);
+}
+
+.coffee-icon {
+    -fx-text-fill: #D4A574;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.9), 10, 0, 0, 2);
+}
+
+.login-title {
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.9), 15, 0, 0, 3);
+}
+
+.login-subtitle {
+    -fx-text-fill: #E6C9A8;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 10, 0, 0, 2);
+}
+
+/* Login card */
+.login-card {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-background-radius: 25px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 30, 0, 0, 10);
+}
+
+.register-dialog {
+    -fx-background-color: rgba(255, 255, 255, 0.98);
+    -fx-background-radius: 25px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 40, 0, 0, 15);
+}
+
+.dialog-title {
+    -fx-text-fill: #4A3728;
+}
+
+/* Input styling */
+.input-container {
+    -fx-alignment: center;
+}
+
+.input-label {
+    -fx-text-fill: #5D4037;
+    -fx-font-weight: bold;
+}
+
+.input-box {
+    -fx-background-color: white;
+    -fx-background-radius: 50px;
+    -fx-border-color: #D7CCC8;
+    -fx-border-width: 2px;
+    -fx-border-radius: 50px;
+    -fx-padding: 5px 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
+}
+
+.input-box:hover {
+    -fx-border-color: #8B6F47;
+    -fx-effect: dropshadow(gaussian, rgba(111, 78, 55, 0.3), 8, 0, 0, 3);
+}
+
+.input-icon {
+    -fx-text-fill: #6F4E37;
+}
+
+.modern-input {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-text-fill: #3E2723;
+    -fx-prompt-text-fill: #BCAAA4;
+    -fx-font-size: 16px;
+}
+
+.modern-input:focused {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+/* Coffee button - Matching image style */
+.coffee-button {
+    -fx-background-color: linear-gradient(to right, #8B6F47 0%, #6F4E37 50%, #5D4037 100%);
+    -fx-text-fill: white;
+    -fx-background-radius: 50px;
+    -fx-border-radius: 50px;
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+    -fx-cursor: hand;
+    -fx-padding: 15px 40px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0, 0, 5);
+}
+
+.coffee-button:hover {
+    -fx-background-color: linear-gradient(to right, #A0826D 0%, #8B6F47 50%, #6F4E37 100%);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 20, 0, 0, 8);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.coffee-button:pressed {
+    -fx-background-color: linear-gradient(to right, #6F4E37 0%, #5D4037 50%, #4A3728 100%);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 8, 0, 0, 3);
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* Links */
+.register-link, .back-link {
+    -fx-text-fill: #6F4E37;
+    -fx-cursor: hand;
+    -fx-underline: true;
+}
+
+.register-link:hover, .back-link:hover {
+    -fx-text-fill: #4A3728;
+}
+
+/* Welcome page styles */
+.welcome-brand {
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 10, 0, 0, 2);
+}
+
+.welcome-title {
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.9), 15, 0, 0, 3);
+}
+
+.welcome-text {
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 8, 0, 0, 2);
+}
+
+/* ============================================
+   IMPORT COMPONENT STYLES
+   ============================================ */
+
+@import "../base/reset.css";
+@import "../base/typography.css";
+@import "../components/buttons.css";
+@import "../components/forms.css";
+@import "../components/tables.css";
+@import "../components/cards.css";
+@import "../animations/transitions.css";
+@import "../utilities/helpers.css";
+
+
+
+
+/* ============================================
+   WELCOME BANNER - New Registration Alert
+   ============================================ */
+
+.welcome-banner {
+    -fx-background-color: linear-gradient(to right, #6B8E23 0%, #556B2F 100%);
+    -fx-background-radius: 12px;
+    -fx-border-color: #9ACD32;
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(107, 142, 35, 0.5), 15, 0, 0, 5);
+    -fx-padding: 15px 25px;
+}
+
+.welcome-icon {
+    -fx-text-fill: #14229d;
+    -fx-effect: dropshadow(gaussian, rgb(17, 90, 156), 8, 0, 0, 0);
+}
+
+.welcome-banner-title {
+    -fx-text-fill: #ff0000;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 5, 0, 0, 2);
+}
+
+.welcome-banner-message {
+    -fx-text-fill: #115a9c;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 3, 0, 0, 1);
+}
+
+.close-banner-button {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-text-fill: #eb0000;
+    -fx-background-radius: 50%;
+    -fx-min-width: 35px;
+    -fx-max-width: 35px;
+    -fx-min-height: 35px;
+    -fx-max-height: 35px;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-border-width: 2px;
+    -fx-border-radius: 50%;
+}
+
+.close-banner-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+    -fx-border-color: #ff0000;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.close-banner-button:pressed {
+    -fx-background-color: rgba(255, 255, 255, 0.4);
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+
+
+
+
+
+/* ============================================
+   DASHBOARD STYLES - Coffee Theme
+   ============================================ */
+
+/* Header styles */
+.header-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4A3728;
+}
+
+.subheader-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #5D4037;
+}
+
+.section-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4A3728;
+}
+
+.header-label-small {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4A3728;
+}
+
+.label-bold {
+    -fx-font-weight: bold;
+    -fx-text-fill: #4A3728;
+}
+
+/* Status messages */
+.success-message {
+    -fx-text-fill: #556B2F;
+    -fx-font-weight: bold;
+}
+
+.error-message {
+    -fx-text-fill: #8B4513;
+    -fx-font-weight: bold;
+}
+
+.info-label {
+    -fx-text-fill: #5D4037;
+    -fx-font-size: 12px;
+}
+
+.secondary-text {
+    -fx-text-fill: #5D4037;
+    -fx-font-size: 14px;
+}
+
+/* Section containers */
+.header-section {
+    -fx-background-color: linear-gradient(to bottom, #FFF8DC 0%, #FAEBD7 100%);
+    -fx-effect: dropshadow(gaussian, rgba(111, 78, 55, 0.15), 8, 0, 0, 3);
+    -fx-border-color: #D7CCC8;
+    -fx-border-width: 0 0 2px 0;
+}
+
+.content-section {
+    -fx-background-color: -fx-background;
+}
+
+.content-area {
+    -fx-background-color: -fx-background;
+}
+
+.button-bar {
+    -fx-background-color: linear-gradient(to top, #FFF8DC 0%, #FAEBD7 100%);
+    -fx-effect: dropshadow(gaussian, rgba(111, 78, 55, 0.15), 8, 0, 0, -3);
+    -fx-border-color: #D7CCC8;
+    -fx-border-width: 2px 0 0 0;
+}
+
+.footer {
+    -fx-background-color: #FAEBD7;
+    -fx-border-color: #D7CCC8;
+    -fx-border-width: 2px 0 0 0;
+}
+
+/* Notification badge - EXTRA PROMINENT RED STYLE */
+.notification-badge {
+    -fx-background-color: #FF0000; /* Pure Red */
+    -fx-text-fill: white;
+    -fx-background-radius: 22px;
+    -fx-padding: 8px 16px;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.8), 12, 0, 0, 4);
+    -fx-border-color: white;
+    -fx-border-width: 3px;
+    -fx-border-radius: 22px;
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-alignment: center;
+}
+
+.notification-badge:hover {
+    -fx-background-color: #FF1744; /* Brighter Red */
+    -fx-effect: dropshadow(gaussian, rgba(255, 23, 68, 1.0), 18, 0, 0, 6);
+    -fx-scale-x: 1.15;
+    -fx-scale-y: 1.15;
+}
+
+/* Notification badge on top of button - LARGE AND CLEAR */
+.notification-badge-top {
+    -fx-background-color: #191919; /* Pure Red */
+    -fx-text-fill: #ff0000;
+    -fx-background-radius: 30%;
+    -fx-padding: 10px;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.9), 15, 0, 0, 5);
+    -fx-border-color: #eb0000;
+    -fx-border-width: 6px;
+    -fx-border-radius: 30%;
+    -fx-min-width: 50px;
+    -fx-min-height: 50px;
+    -fx-max-width: 50px;
+    -fx-max-height: 50px;
+    -fx-alignment: center;
+}
+
+.notification-badge-top:hover {
+    -fx-background-color: #191919; /* Brighter Red */
+    -fx-effect: dropshadow(gaussian, rgba(255, 23, 68, 1.0), 20, 0, 0, 8);
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+}
+
+/* Notification list */
+.notification-list .list-cell {
+    -fx-background-color: white;
+    -fx-padding: 15px;
+    -fx-border-color: #EFEBE9;
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.notification-list .list-cell:hover {
+    -fx-background-color: #FFF8DC;
+    -fx-effect: dropshadow(gaussian, rgba(111, 78, 55, 0.2), 5, 0, 0, 2);
+}
+
+/* Unread notification styling */
+.notification-cell {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-padding: 12px;
+    -fx-border-color: #EFEBE9;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+}
+
+.notification-unread {
+    -fx-background-color: #FFE5E5; /* Light red background */
+    -fx-border-color: #DC143C;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(220, 20, 60, 0.2), 8, 0, 0, 2);
+}
+
+.notification-type {
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 4px 10px;
+    -fx-background-radius: 12px;
+}
+
+.type-order-ready {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+}
+
+.type-sale {
+    -fx-background-color: #FF9800;
+    -fx-text-fill: white;
+}
+
+.type-general {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+/* PREPARING order status - Yellow-Orange */
+.type-preparing,
+.status-preparing {
+    -fx-background-color: linear-gradient(to right, #FFD700 0%, #FFA500 100%); /* Gold to Orange */
+    -fx-text-fill: #1A1A1A;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(255, 165, 0, 0.5), 5, 0, 0, 2);
+}
+
+.notification-date {
+    -fx-text-fill: #8D6E63;
+    -fx-font-size: 12px;
+}
+
+.status-unread {
+    -fx-background-color: #DC143C;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 4px 10px;
+    -fx-background-radius: 12px;
+}
+
+.status-read {
+    -fx-background-color: #9E9E9E;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 4px 10px;
+    -fx-background-radius: 12px;
+}
+
+.notification-message {
+    -fx-text-fill: #3E2723;
+    -fx-font-size: 14px;
+    -fx-wrap-text: true;
+}
+
+.message-unread {
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A1A1A;
+}
+
+/* Tab pane styling */
+.tab-pane {
+    -fx-background-color: transparent;
+}
+
+.tab-pane .tab-header-area {
+    -fx-background-color: #FAEBD7;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #EFEBE9;
+    -fx-background-radius: 8px 8px 0 0;
+    -fx-padding: 12px 24px;
+    -fx-border-color: #D7CCC8;
+    -fx-border-width: 2px 2px 0 2px;
+}
+
+.tab-pane .tab:hover {
+    -fx-background-color: #E6C9A8;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: white;
+    -fx-border-color: #8B6F47;
+}
+
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #5D4037;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #4A3728;
+    -fx-font-weight: bold;
+}
+
+.tab-pane .tab-content-area {
+    -fx-background-color: white;
+    -fx-border-color: #8B6F47;
+    -fx-border-width: 2px;
+}
+
+/* ListView styling */
+.list-view {
+    -fx-background-color: white;
+    -fx-border-color: #D7CCC8;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3E2723;
+    -fx-padding: 10px 15px;
+}
+
+.list-view .list-cell:hover {
+    -fx-background-color: #FFF8DC;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: linear-gradient(to right, #8B6F47 0%, #6F4E37 100%);
+    -fx-text-fill: white;
+}
+
+/* Separator styling */
+.separator {
+    -fx-background-color: #D7CCC8;
+}
+
+.separator .line {
+    -fx-border-color: #D7CCC8;
+    -fx-border-width: 1px 0 0 0;
+}
+
+/* Spinner styling */
+.spinner {
+    -fx-background-color: white;
+    -fx-border-color: #D7CCC8;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.spinner .text-field {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-text-fill: #3E2723;
+}
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-background-color: #FAEBD7;
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+    -fx-background-color: #E6C9A8;
+}
+
+/* ============================================
+   BUTTON OVERRIDES - Coffee Theme
+   ============================================ */
+
+.primary-button {
+    -fx-background-color: linear-gradient(to right, #8B6F47 0%, #6F4E37 50%, #5D4037 100%);
+    -fx-text-fill: white;
+    -fx-background-radius: 50px;
+    -fx-border-radius: 50px;
+    -fx-padding: 14px 32px;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(111, 78, 55, 0.4), 12, 0, 0, 4);
+}
+
+.primary-button:hover {
+    -fx-background-color: linear-gradient(to right, #A0826D 0%, #8B6F47 50%, #6F4E37 100%);
+    -fx-effect: dropshadow(gaussian, rgba(111, 78, 55, 0.5), 16, 0, 0, 6);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.primary-button:pressed {
+    -fx-background-color: linear-gradient(to right, #6F4E37 0%, #5D4037 50%, #4A3728 100%);
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.secondary-button {
+    -fx-background-color: white;
+    -fx-text-fill: #6F4E37;
+    -fx-background-radius: 50px;
+    -fx-border-color: #8B6F47;
+    -fx-border-width: 2px;
+    -fx-border-radius: 50px;
+    -fx-padding: 14px 32px;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(111, 78, 55, 0.2), 8, 0, 0, 3);
+}
+
+.secondary-button:hover {
+    -fx-background-color: #FFF8DC;
+    -fx-border-color: #6F4E37;
+    -fx-border-width: 3px;
+    -fx-effect: dropshadow(gaussian, rgba(111, 78, 55, 0.3), 12, 0, 0, 4);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.secondary-button:pressed {
+    -fx-background-color: #FAEBD7;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* ============================================
+   TABLE OVERRIDES - Coffee Theme
+   ============================================ */
+
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-border-color: #D7CCC8;
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(111, 78, 55, 0.15), 10, 0, 0, 3);
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #E6C9A8 0%, #D4A574 100%);
+    -fx-background-radius: 12px 12px 0 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #3E2723;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #FFF8DC;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: linear-gradient(to right, #8B6F47 0%, #6F4E37 100%);
+}
+
+.table-view .table-row-cell:selected .table-cell {
+    -fx-text-fill: white;
+}
+
+/* ============================================
+   CARD OVERRIDES - Coffee Theme
+   ============================================ */
+
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-padding: 20px;
+    -fx-border-color: #D7CCC8;
+    -fx-border-width: 2px;
+    -fx-border-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(111, 78, 55, 0.2), 12, 0, 0, 4);
+}
+
+.card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(111, 78, 55, 0.3), 18, 0, 0, 6);
+}
+
+/* ============================================
+   FORM CONTROLS - Coffee Theme
+   ============================================ */
+
+.text-field {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: #D7CCC8;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-padding: 10px 15px;
+    -fx-text-fill: #3E2723;
+}
+
+.text-field:focused {
+    -fx-border-color: #6F4E37;
+    -fx-effect: dropshadow(gaussian, rgba(111, 78, 55, 0.3), 8, 0, 0, 0);
+}
+
+.combo-box {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: #D7CCC8;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+}
+
+.combo-box:focused {
+    -fx-border-color: #6F4E37;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: #FAEBD7;
+    -fx-background-radius: 0 8px 8px 0;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #6F4E37;
+}
+
+

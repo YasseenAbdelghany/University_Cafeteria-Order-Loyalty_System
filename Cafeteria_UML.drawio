@@ -1,0 +1,211 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" version="28.1.0">
+  <diagram name="Cafeteria UML - Full" id="0">
+    <mxGraphModel dx="3298" dy="3055" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style=";fontSize=14" />
+        <mxCell id="1" style=";fontSize=14" parent="0" />
+        <mxCell id="Student" value="Student&#xa;----------------------&#xa;-id&#xa;-studentCode&#xa;-name&#xa;-account: LoyaltyAccount&#xa;----------------------&#xa;+getId()&#xa;+getStudentCode()&#xa;+getAccount(): LoyaltyAccount&#xa;+setStudentCode(code: String): void" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="860" y="-1010" width="260" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="LoyaltyAccount" value="LoyaltyAccount&#xa;----------------------&#xa;-points: int&#xa;----------------------&#xa;+balance(): int&#xa;+add(points: int): void&#xa;+deduct(points: int): void" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="430" y="-760" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="MenuItem" value="MenuItem&#xa;----------------------&#xa;-id&#xa;-name&#xa;-description&#xa;-price: Money&#xa;-category: Category&#xa;----------------------&#xa;" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="890" y="-610" width="180" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="Order" value="Order&#xa;----------------------&#xa;-id&#xa;-studentId&#xa;-status: OrderStatus&#xa;-items: List&lt;OrderItem&gt;&#xa;----------------------&#xa;+addItem(item: MenuItem, qty: int): void&#xa;+total(): Money&#xa;+markPreparing(): void&#xa;+markReady(): void" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="1270" y="-860" width="280" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="OrderItem" value="OrderItem&#xa;----------------------&#xa;-menuItemId&#xa;-nameSnapshot&#xa;-unitPrice: Money&#xa;-qty: int&#xa;----------------------&#xa;+lineTotal(): Money" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="1320" y="-620" width="180" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="IStudentRepository" value="&lt;&lt;interface&gt;&gt; IStudentRepository&#xa;----------------------&#xa;----------------------&#xa;+save(Student): void&#xa;+findById(id): Student&#xa;+findByCode(code): Student?" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="1110" y="690" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="IMenuProvider" value="&lt;&lt;interface&gt;&gt; IMenuProvider&#xa;----------------------&#xa;----------------------&#xa;+listItems(): List&lt;MenuItem&gt;&#xa;+add(item: MenuItem): void&#xa;+update(item: MenuItem): void&#xa;+remove(itemId): void" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="330" y="130" width="180" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="IOrderRepository" value="&lt;&lt;interface&gt;&gt; IOrderRepository&#xa;----------------------&#xa;----------------------&#xa;+save(Order): void&#xa;+findById(id): Order&#xa;+findPending(): List&lt;Order&gt;" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="1050" y="200" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ILoyaltyService" value="&lt;&lt;interface&gt;&gt; ILoyaltyService&#xa;----------------------&#xa;----------------------&#xa;+awardPoints(student: Student, amount: Money): void&#xa;+redeem(student: Student, points: int): Discount&#xa;+getBalance(student: Student): int" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="1860" y="-450" width="250" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="IPaymentProcessor" value="&amp;lt;&amp;gt; IPaymentProcessor&lt;br&gt;----------------------&lt;br&gt;----------------------&lt;br&gt;+ processPayment(amount: double): boolean" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="1010" y="-390" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="INotifier" value="&lt;&lt;interface&gt;&gt; INotifier&#xa;----------------------&#xa;----------------------&#xa;+notify(userId, message): void" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="2090" y="170" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="IReportingService" value="&lt;&lt;interface&gt;&gt; IReportingService&#xa;----------------------&#xa;----------------------&#xa;+salesSummary(range: DateRange): SalesReport&#xa;+loyaltyRedemptions(range: DateRange): RedemptionReport" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="2000" y="670" width="180" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="StudentDAO" value="StudentDAO&#xa;----------------------&#xa;----------------------&#xa;" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="800" y="525" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="OrderDAO" value="OrderDAO&#xa;----------------------&#xa;----------------------&#xa;" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="770" y="200" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="MenuDAO" value="MenuDAO&#xa;----------------------&#xa;----------------------&#xa;" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="500" y="500" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="LoyaltyProgram" value="LoyaltyProgram&#xa;----------------------&#xa;-POINTS_PER_EGP: double&#xa;-EGP_PER_POINT: double&#xa;-repo: IStudentRepository&#xa;----------------------&#xa;+awardPoints(student: Student, amount: Money): void&#xa;+redeem(student: Student, points: int): Discount&#xa;+getBalance(student: Student): int" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="1980" y="-960" width="390" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="NotificationService" value="NotificationService&#xa;----------------------&#xa;----------------------&#xa;+notify(userId, message): void" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="2090" y="430" width="190" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportService" value="ReportService&#xa;----------------------&#xa;-orders: IOrderRepository&#xa;-menu: IMenuProvider&#xa;-students: IStudentRepository&#xa;----------------------&#xa;+salesSummary(range: DateRange): SalesReport&#xa;+loyaltyRedemptions(range: DateRange): RedemptionReport" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="1630" y="560" width="180" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="StudentManager" value="StudentManager&#xa;----------------------&#xa;-repo: IStudentRepository&#xa;----------------------&#xa;+register(name): Student&#xa;+login(studentCode): Student&#xa;-generateStudentCode(id: int): String" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="800" y="690" width="180" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="MenuManager" value="MenuManager&lt;br&gt;----------------------&lt;br&gt;-menu: IMenuProvider&lt;br&gt;----------------------&lt;br&gt;+addItem(item:MenuItem)&lt;br&gt;+editItem(item:MenuItem)&lt;br&gt;+removeItem(item:MenuItem)&lt;br&gt;+listItems(): List&lt;menuitem&gt;&lt;/menuitem&gt;" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="110" y="450" width="190" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="OrderProcessor" value="OrderProcessor&lt;br&gt;----------------------&lt;br&gt;-orders: IOrderRepository&lt;br&gt;-menu: IMenuProvider&lt;br&gt;-loyalty: ILoyaltyService&lt;br&gt;-payments: IPaymentProcessor&lt;br&gt;-notifier: INotifier&lt;br&gt;----------------------&lt;br&gt;+placeOrder(student: Student, selections: List): Order&lt;br&gt;+advanceStatus(orderId, newStatus: OrderStatus): void&lt;div&gt;&lt;div&gt;+ placeOrder()&lt;/div&gt;&lt;div&gt;+ trackOrder()&lt;/div&gt;&lt;div&gt;+ notifyStudent()&lt;/div&gt;&lt;div&gt;+ handlePayment(payment: Payment)&lt;/div&gt;&lt;/div&gt;" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="1640" y="-90" width="200" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="Money" value="Money&#xa;----------------------&#xa;-amount: decimal&#xa;-currency&#xa;----------------------&#xa;" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="100" y="950" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="DateRange" value="DateRange&#xa;----------------------&#xa;-from&#xa;-to&#xa;----------------------&#xa;" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="300" y="950" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="SalesReport" value="SalesReport&#xa;----------------------&#xa;----------------------&#xa;" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="500" y="950" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="RedemptionReport" value="RedemptionReport&#xa;----------------------&#xa;----------------------&#xa;" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="700" y="950" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Discount" value="Discount&#xa;----------------------&#xa;-amount: double&#xa;-description: String&#xa;----------------------&#xa;" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="900" y="950" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Category" value="Category &lt;&lt;enum&gt;&gt;&#xa;----------------------&#xa;----------------------&#xa;MAIN_COURSE&#xa;SNACK&#xa;DRINK" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="1100" y="950" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="OrderStatus" value="OrderStatus &lt;&lt;enum&gt;&gt;&#xa;----------------------&#xa;----------------------&#xa;NEW&#xa;PREPARING&#xa;READY" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="1300" y="950" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Selection" value="Selection&#xa;----------------------&#xa;-itemId&#xa;-qty&#xa;----------------------&#xa;" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="1500" y="950" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="PaymentResult" value="PaymentResult&#xa;----------------------&#xa;-success: bool&#xa;-txId&#xa;----------------------&#xa;" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" parent="1" vertex="1">
+          <mxGeometry x="1700" y="950" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Student_LoyaltyAccount" value="" style="endArrow=diamondThin;;fontSize=14;endFill=1;" parent="1" source="Student" target="LoyaltyAccount" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Student_refers" value="refers" style="endArrow=block;html=1;;fontSize=14" parent="1" source="Student" target="Student" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Student_Order" value="places" style="endArrow=block;html=1;;fontSize=14" parent="1" source="Student" target="Order" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Order_OrderItem" value="" style="endArrow=diamondThin;;fontSize=14" parent="1" source="Order" target="OrderItem" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OrderItem_MenuItem" value="snapshot" style="endArrow=block;html=1;;fontSize=14" parent="1" source="OrderItem" target="MenuItem" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="StudentDAO_IStudentRepository" value="" style="endArrow=block;dashed=1;;fontSize=14" parent="1" source="StudentDAO" target="IStudentRepository" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OrderDAO_IOrderRepository" value="" style="endArrow=block;dashed=1;;fontSize=14" parent="1" source="OrderDAO" target="IOrderRepository" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MenuDAO_IMenuProvider" value="" style="endArrow=block;dashed=1;;fontSize=14" parent="1" source="MenuDAO" target="IMenuProvider" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LoyaltyProgram_ILoyaltyService" value="" style="endArrow=block;dashed=1;;fontSize=14" parent="1" source="LoyaltyProgram" target="ILoyaltyService" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NotificationService_INotifier" value="" style="endArrow=block;dashed=1;;fontSize=14" parent="1" source="NotificationService" target="INotifier" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportService_IReportingService" value="" style="endArrow=block;dashed=1;;fontSize=14" parent="1" source="ReportService" target="IReportingService" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="StudentManager_IStudentRepository" value="" style="endArrow=open;dashed=1;;fontSize=14" parent="1" source="StudentManager" target="IStudentRepository" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MenuManager_IMenuProvider" value="" style="endArrow=open;dashed=1;;fontSize=14" parent="1" source="MenuManager" target="IMenuProvider" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OrderProcessor_IOrderRepository" value="" style="endArrow=open;dashed=1;;fontSize=14" parent="1" source="OrderProcessor" target="IOrderRepository" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OrderProcessor_IMenuProvider" value="" style="endArrow=open;dashed=1;;fontSize=14" parent="1" source="OrderProcessor" target="IMenuProvider" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OrderProcessor_ILoyaltyService" value="" style="endArrow=open;dashed=1;;fontSize=14" parent="1" source="OrderProcessor" target="ILoyaltyService" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OrderProcessor_IPaymentProcessor" value="" style="endArrow=open;dashed=1;;fontSize=14;" parent="1" source="RH68ITPguOUiStWLgNdJ-2" target="IPaymentProcessor" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1260" y="-370" as="sourcePoint" />
+            <mxPoint x="1297" y="-270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OrderProcessor_INotifier" value="" style="endArrow=open;dashed=1;;fontSize=14" parent="1" source="OrderProcessor" target="INotifier" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportService_IOrderRepository" value="" style="endArrow=open;dashed=1;;fontSize=14" parent="1" source="ReportService" target="IOrderRepository" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportService_IMenuProvider" value="" style="endArrow=open;dashed=1;;fontSize=14" parent="1" source="ReportService" target="IMenuProvider" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ReportService_IStudentRepository" value="" style="endArrow=open;dashed=1;;fontSize=14" parent="1" source="ReportService" target="IStudentRepository" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RH68ITPguOUiStWLgNdJ-2" value="Payment&lt;br&gt;----------------------&lt;br&gt;&lt;div&gt;- paymentID: String&lt;/div&gt;&lt;div&gt;- amount: double&lt;/div&gt;&lt;div&gt;- status: String&lt;/div&gt;&lt;div&gt;- processor: IPaymentProcessor&lt;/div&gt;----------------------&lt;br&gt;&lt;div&gt;+ initiatePayment()&lt;/div&gt;&lt;div&gt;+ confirmPayment()&lt;/div&gt;&lt;div&gt;+ refund()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="1290" y="-350" width="170" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="RH68ITPguOUiStWLgNdJ-3" value="&lt;div&gt;CashPayment&lt;/div&gt;&lt;div&gt;Processor&lt;/div&gt;----------------------&lt;br&gt;+ processPayment(amount: double): boolean&lt;br&gt;----------------------" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="630" y="-490" width="180" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="RH68ITPguOUiStWLgNdJ-4" value="&lt;div&gt;CreditCardPayment&lt;/div&gt;&lt;div&gt;Processor&lt;/div&gt;----------------------&lt;br&gt;+ processPayment(amount: double): boolean&lt;br&gt;----------------------" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="630" y="-340" width="180" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="RH68ITPguOUiStWLgNdJ-5" value="&lt;div&gt;MobileWalletPayment&lt;/div&gt;&lt;div&gt;Processor&lt;/div&gt;----------------------&lt;br&gt;+ processPayment(amount: double): boolean&lt;br&gt;----------------------" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="630" y="-180" width="180" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="RH68ITPguOUiStWLgNdJ-6" value="" style="endArrow=block;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.005;entryY=0.192;entryDx=0;entryDy=0;entryPerimeter=0;endFill=0;" edge="1" parent="1" source="RH68ITPguOUiStWLgNdJ-3" target="IPaymentProcessor">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="980" y="-350" as="sourcePoint" />
+            <mxPoint x="1030" y="-400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RH68ITPguOUiStWLgNdJ-7" value="" style="endArrow=block;html=1;rounded=0;exitX=1.018;exitY=0.349;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endFill=0;exitPerimeter=0;" edge="1" parent="1" source="RH68ITPguOUiStWLgNdJ-4" target="IPaymentProcessor">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="910" y="-330" as="sourcePoint" />
+            <mxPoint x="1109" y="-272" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RH68ITPguOUiStWLgNdJ-8" value="" style="endArrow=block;html=1;rounded=0;exitX=1.008;exitY=0.339;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;endFill=0;exitPerimeter=0;" edge="1" parent="1" source="RH68ITPguOUiStWLgNdJ-5" target="IPaymentProcessor">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="870" y="-260" as="sourcePoint" />
+            <mxPoint x="1069" y="-202" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RH68ITPguOUiStWLgNdJ-10" value="" style="endArrow=block;html=1;rounded=0;exitX=-0.012;exitY=0.087;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endFill=1;exitPerimeter=0;" edge="1" parent="1" source="OrderProcessor" target="RH68ITPguOUiStWLgNdJ-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1430" y="114" as="sourcePoint" />
+            <mxPoint x="1629" y="-50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RH68ITPguOUiStWLgNdJ-11" value="PaymentDAO&lt;br&gt;----------------------&lt;br&gt;----------------------" style="shape=rectangle;whiteSpace=wrap;html=1;;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="950" y="-160" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="RH68ITPguOUiStWLgNdJ-12" value="" style="endArrow=block;dashed=1;;fontSize=14;exitX=0.562;exitY=0.016;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="RH68ITPguOUiStWLgNdJ-11" target="IPaymentProcessor">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1110" y="20" as="sourcePoint" />
+            <mxPoint x="1210" y="20" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

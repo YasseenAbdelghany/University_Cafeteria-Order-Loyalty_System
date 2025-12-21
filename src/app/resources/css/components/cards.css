@@ -1,0 +1,240 @@
+/* ============================================
+   Card Component Styles
+   ============================================ */
+
+/* Base Card Container */
+.card {
+    -fx-background-color: -fx-surface;
+    -fx-background-radius: -fx-radius-lg;
+    -fx-padding: -fx-space-6;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.07), 10, 0, 0, 2),
+                dropshadow(gaussian, rgba(0, 0, 0, 0.06), 3, 0, 0, 1);
+    -fx-cursor: hand;
+}
+
+/* Card with responsive padding */
+.card-sm {
+    -fx-padding: -fx-space-4;
+}
+
+.card-md {
+    -fx-padding: -fx-space-6;
+}
+
+.card-lg {
+    -fx-padding: -fx-space-8;
+}
+
+/* Card Hover Effect - Elevation */
+.card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 15, 0, 0, 4),
+                dropshadow(gaussian, rgba(0, 0, 0, 0.05), 6, 0, 0, 2);
+    -fx-translate-y: -2px;
+}
+
+/* Card Header Section */
+.card-header {
+    -fx-padding: 0 0 -fx-space-4 0;
+    -fx-border-color: transparent transparent -fx-border-color-light transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.card-header .label {
+    -fx-font-size: -fx-text-xl;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-text-primary;
+    -fx-font-family: -fx-font-family-heading;
+}
+
+/* Card Title */
+.card-title {
+    -fx-font-size: -fx-text-xl;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-text-primary;
+    -fx-font-family: -fx-font-family-heading;
+    -fx-padding: 0 0 -fx-space-3 0;
+}
+
+/* Card Subtitle */
+.card-subtitle {
+    -fx-font-size: -fx-text-sm;
+    -fx-text-fill: -fx-text-secondary;
+    -fx-padding: 0 0 -fx-space-2 0;
+}
+
+/* Card Content Section */
+.card-content {
+    -fx-padding: -fx-space-4 0 0 0;
+}
+
+/* Card Footer Section */
+.card-footer {
+    -fx-padding: -fx-space-4 0 0 0;
+    -fx-border-color: -fx-border-color-light transparent transparent transparent;
+    -fx-border-width: 1px 0 0 0;
+}
+
+/* Card Variants */
+
+/* Elevated Card - More prominent shadow */
+.card-elevated {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.12), 20, 0, 0, 6),
+                dropshadow(gaussian, rgba(0, 0, 0, 0.08), 8, 0, 0, 3);
+}
+
+.card-elevated:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 25, 0, 0, 8),
+                dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 4);
+    -fx-translate-y: -3px;
+}
+
+/* Flat Card - No shadow */
+.card-flat {
+    -fx-effect: none;
+    -fx-border-color: -fx-border-color-light;
+    -fx-border-width: 1px;
+}
+
+.card-flat:hover {
+    -fx-border-color: -fx-primary-light;
+    -fx-translate-y: 0;
+}
+
+/* Outlined Card */
+.card-outlined {
+    -fx-effect: none;
+    -fx-border-color: -fx-border-color-dark;
+    -fx-border-width: 2px;
+    -fx-border-radius: -fx-radius-lg;
+}
+
+.card-outlined:hover {
+    -fx-border-color: -fx-primary;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 8, 0, 0, 2);
+}
+
+/* Interactive Card - Clickable */
+.card-interactive {
+    -fx-cursor: hand;
+}
+
+.card-interactive:hover {
+    -fx-background-color: derive(-fx-surface, -5%);
+}
+
+.card-interactive:pressed {
+    -fx-translate-y: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 5, 0, 0, 1);
+}
+
+/* Card with Primary Accent */
+.card-primary {
+    -fx-border-color: -fx-primary transparent transparent transparent;
+    -fx-border-width: 3px 0 0 0;
+}
+
+/* Card with Success Accent */
+.card-success {
+    -fx-border-color: -fx-success transparent transparent transparent;
+    -fx-border-width: 3px 0 0 0;
+}
+
+/* Card with Warning Accent */
+.card-warning {
+    -fx-border-color: -fx-warning transparent transparent transparent;
+    -fx-border-width: 3px 0 0 0;
+}
+
+/* Card with Error Accent */
+.card-error {
+    -fx-border-color: -fx-error transparent transparent transparent;
+    -fx-border-width: 3px 0 0 0;
+}
+
+/* Dashboard Card - Special styling for dashboard widgets */
+.dashboard-card {
+    -fx-background-color: -fx-surface;
+    -fx-background-radius: -fx-radius-lg;
+    -fx-padding: -fx-space-6;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 12, 0, 0, 3);
+    -fx-min-height: 150px;
+}
+
+.dashboard-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.12), 18, 0, 0, 5);
+    -fx-translate-y: -2px;
+}
+
+/* Stat Card - For displaying statistics */
+.stat-card {
+    -fx-background-color: linear-gradient(to bottom right, -fx-primary, -fx-primary-dark);
+    -fx-background-radius: -fx-radius-lg;
+    -fx-padding: -fx-space-6;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 12, 0, 0, 3);
+}
+
+.stat-card .label {
+    -fx-text-fill: white;
+}
+
+.stat-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 18, 0, 0, 5);
+    -fx-translate-y: -2px;
+}
+
+/* Info Card - For informational content */
+.info-card {
+    -fx-background-color: derive(-fx-primary, 90%);
+    -fx-border-color: -fx-primary;
+    -fx-border-width: 1px;
+    -fx-border-radius: -fx-radius-lg;
+    -fx-background-radius: -fx-radius-lg;
+    -fx-padding: -fx-space-4;
+}
+
+/* Card Grid Container - For laying out multiple cards */
+.card-grid {
+    -fx-hgap: -fx-space-4;
+    -fx-vgap: -fx-space-4;
+    -fx-padding: -fx-space-4;
+}
+
+/* Card List Container - For vertical card lists */
+.card-list {
+    -fx-spacing: -fx-space-4;
+    -fx-padding: -fx-space-4;
+}
+
+/* Compact Card - Smaller padding for dense layouts */
+.card-compact {
+    -fx-padding: -fx-space-3;
+}
+
+.card-compact .card-header {
+    -fx-padding: 0 0 -fx-space-2 0;
+}
+
+.card-compact .card-title {
+    -fx-font-size: -fx-text-base;
+    -fx-padding: 0 0 -fx-space-2 0;
+}
+
+/* Card with Image */
+.card-image {
+    -fx-padding: 0;
+}
+
+.card-image .card-content {
+    -fx-padding: -fx-space-6;
+}
+
+/* Smooth transitions for all card interactions */
+.card,
+.card-elevated,
+.card-flat,
+.card-outlined,
+.card-interactive,
+.dashboard-card,
+.stat-card {
+    -fx-transition: all -fx-transition-slow;
+}

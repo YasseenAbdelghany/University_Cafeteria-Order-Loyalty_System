@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="1080" prefWidth="1920" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="app.gui.admin.controllers.PaymentManagerDashboardController"
+            stylesheets="@../../css/themes/admin-theme.css">
+    
+    <top>
+        <VBox styleClass="header">
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Label fx:id="welcomeLabel" text="Payment Manager Dashboard" styleClass="header-title">
+                    <font><Font size="24" /></font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="Logout" onAction="#handleLogout" styleClass="secondary-button" />
+            </HBox>
+        </VBox>
+    </top>
+    
+    <center>
+        <SplitPane dividerPositions="0.4">
+            <VBox spacing="10" styleClass="content-section">
+                <padding><Insets top="20" right="20" bottom="20" left="20" /></padding>
+                
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="Payment Methods" styleClass="section-title">
+                        <font><Font size="18" /></font>
+                    </Label>
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button text="Refresh" onAction="#handleLoadMethods" styleClass="secondary-button" />
+                </HBox>
+                
+                <ListView fx:id="paymentMethodsList" VBox.vgrow="ALWAYS" />
+            </VBox>
+            
+            <VBox spacing="15" styleClass="content-section">
+                <padding><Insets top="20" right="20" bottom="20" left="20" /></padding>
+                
+                <Label text="Payment Method Management" styleClass="section-title">
+                    <font><Font size="18" /></font>
+                </Label>
+                
+                <Separator />
+                
+                <Label text="Method Name:" styleClass="form-label" />
+                <TextField fx:id="methodNameField" promptText="Enter method name" styleClass="text-field" />
+                
+                <Label text="Method Details:" />
+                <TextArea fx:id="methodDetailsArea" editable="false" wrapText="true" prefRowCount="8" VBox.vgrow="ALWAYS" />
+                
+                <Separator />
+                
+                <HBox spacing="10">
+                    <Button text="Add Method" onAction="#handleAddMethod" styleClass="primary-button" HBox.hgrow="ALWAYS" />
+                    <Button text="Remove Method" onAction="#handleRemoveMethod" styleClass="danger-button" HBox.hgrow="ALWAYS" />
+                </HBox>
+                
+                <Button text="Clear" onAction="#handleClear" styleClass="secondary-button" maxWidth="Infinity" />
+                
+                <Separator />
+                
+                <Label text="Note: Payment methods are implemented at the code level. Adding new methods requires implementing the IPaymentProcessor interface." 
+                       wrapText="true" styleClass="info-text">
+                    <font><Font size="11" /></font>
+                </Label>
+            </VBox>
+        </SplitPane>
+    </center>
+</BorderPane>

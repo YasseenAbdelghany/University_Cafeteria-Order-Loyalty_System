@@ -1,0 +1,479 @@
+/* ============================================
+   FORM CONTROLS STYLING
+   Modern form input styles with focus states
+   
+   USAGE:
+   - Import this file after theme files (admin-theme.css or student-theme.css)
+   - Form controls automatically inherit theme colors via CSS variables
+   - Apply style classes to form elements in FXML:
+     * .text-field - Standard text inputs
+     * .text-field.error - Error state
+     * .text-field.success - Success state
+     * .combo-box - Dropdown controls
+     * .check-box - Checkboxes
+     * .radio-button - Radio buttons
+   
+   REQUIREMENTS COVERED:
+   - 5.1: Text field styling with borders and padding
+   - 5.2: Focus states with colored borders and glow
+   - 5.3: Invalid/error state styling
+   - 5.4: Dropdown/combo box styling with hover effects
+   - 5.5: Checkbox and radio button styling
+   ============================================ */
+
+/* ============================================
+   TEXT INPUT FIELDS
+   ============================================ */
+
+/* Base text field styling */
+.text-field {
+    -fx-background-color: var(--surface, #ffffff);
+    -fx-background-radius: 8px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-padding: 12px 16px;
+    -fx-font-size: var(--text-base, 16px);
+    -fx-font-family: var(--font-primary, 'Segoe UI');
+    -fx-text-fill: var(--text-primary, #1e293b);
+    -fx-prompt-text-fill: #94a3b8;
+}
+
+/* Text field hover state */
+.text-field:hover {
+    -fx-border-color: #cbd5e1;
+}
+
+/* Text field focus state with colored border and glow */
+.text-field:focused {
+    -fx-border-color: var(--primary, #2563eb);
+    -fx-background-color: var(--surface, #ffffff);
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.15), 8, 0, 0, 0);
+}
+
+/* Text field disabled state */
+.text-field:disabled {
+    -fx-opacity: 0.6;
+    -fx-background-color: #f1f5f9;
+    -fx-border-color: #e2e8f0;
+}
+
+/* Invalid/error state styling */
+.text-field.error,
+.text-field:invalid {
+    -fx-border-color: var(--error, #ef4444);
+    -fx-border-width: 2px;
+}
+
+.text-field.error:focused,
+.text-field:invalid:focused {
+    -fx-border-color: var(--error, #ef4444);
+    -fx-effect: dropshadow(gaussian, rgba(239, 68, 68, 0.2), 8, 0, 0, 0);
+}
+
+/* Success state styling */
+.text-field.success {
+    -fx-border-color: var(--success, #10b981);
+}
+
+.text-field.success:focused {
+    -fx-border-color: var(--success, #10b981);
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.15), 8, 0, 0, 0);
+}
+
+/* Text area styling */
+.text-area {
+    -fx-background-color: var(--surface, #ffffff);
+    -fx-background-radius: 8px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-padding: 12px 16px;
+    -fx-font-size: var(--text-base, 16px);
+    -fx-font-family: var(--font-primary, 'Segoe UI');
+}
+
+.text-area:focused {
+    -fx-border-color: var(--primary, #2563eb);
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.15), 8, 0, 0, 0);
+}
+
+.text-area .content {
+    -fx-background-color: var(--surface, #ffffff);
+}
+
+/* Password field styling */
+.password-field {
+    -fx-background-color: var(--surface, #ffffff);
+    -fx-background-radius: 8px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-padding: 12px 16px;
+    -fx-font-size: var(--text-base, 16px);
+    -fx-font-family: var(--font-primary, 'Segoe UI');
+}
+
+.password-field:focused {
+    -fx-border-color: var(--primary, #2563eb);
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.15), 8, 0, 0, 0);
+}
+
+/* ============================================
+   DROPDOWN / COMBO BOX CONTROLS
+   ============================================ */
+
+/* Base combo box styling */
+.combo-box {
+    -fx-background-color: var(--surface, #ffffff);
+    -fx-background-radius: 8px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-padding: 8px 12px;
+}
+
+/* Combo box button (arrow button) */
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0 8px 8px 0;
+    -fx-padding: 8px 12px;
+}
+
+.combo-box .arrow {
+    -fx-background-color: var(--text-secondary, #64748b);
+    -fx-padding: 4px;
+    -fx-shape: "M 0 0 L 4 4 L 8 0 Z";
+}
+
+/* Combo box hover state */
+.combo-box:hover {
+    -fx-border-color: var(--primary-light, #3b82f6);
+    -fx-cursor: hand;
+}
+
+/* Combo box focused state */
+.combo-box:focused {
+    -fx-border-color: var(--primary, #2563eb);
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.15), 8, 0, 0, 0);
+}
+
+/* Combo box showing (dropdown open) */
+.combo-box:showing {
+    -fx-border-color: var(--primary, #2563eb);
+}
+
+/* Combo box list cell */
+.combo-box-popup .list-view {
+    -fx-background-color: var(--surface, #ffffff);
+    -fx-background-radius: 8px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 4);
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 10px 16px;
+    -fx-font-size: var(--text-base, 16px);
+    -fx-text-fill: var(--text-primary, #1e293b);
+}
+
+/* Combo box list cell hover */
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #f1f5f9;
+    -fx-cursor: hand;
+}
+
+/* Combo box list cell selected */
+.combo-box-popup .list-view .list-cell:selected {
+    -fx-background-color: var(--primary-light, #3b82f6);
+    -fx-text-fill: white;
+}
+
+/* Choice box styling (similar to combo box) */
+.choice-box {
+    -fx-background-color: var(--surface, #ffffff);
+    -fx-background-radius: 8px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-padding: 8px 12px;
+}
+
+.choice-box:hover {
+    -fx-border-color: var(--primary-light, #3b82f6);
+}
+
+.choice-box:focused {
+    -fx-border-color: var(--primary, #2563eb);
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.15), 8, 0, 0, 0);
+}
+
+/* ============================================
+   CHECKBOX CONTROLS
+   ============================================ */
+
+/* Base checkbox styling */
+.check-box {
+    -fx-font-size: var(--text-base, 16px);
+    -fx-font-family: var(--font-primary, 'Segoe UI');
+    -fx-text-fill: var(--text-primary, #1e293b);
+    -fx-spacing: 8px;
+}
+
+/* Checkbox box */
+.check-box .box {
+    -fx-background-color: var(--surface, #ffffff);
+    -fx-background-radius: 6px;
+    -fx-border-color: #cbd5e1;
+    -fx-border-width: 2px;
+    -fx-border-radius: 6px;
+    -fx-padding: 10px;
+}
+
+/* Checkbox hover */
+.check-box:hover .box {
+    -fx-border-color: var(--primary, #2563eb);
+    -fx-cursor: hand;
+}
+
+/* Checkbox focused */
+.check-box:focused .box {
+    -fx-border-color: var(--primary, #2563eb);
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.15), 6, 0, 0, 0);
+}
+
+/* Checkbox selected (checked) */
+.check-box:selected .box {
+    -fx-background-color: var(--primary, #2563eb);
+    -fx-border-color: var(--primary, #2563eb);
+}
+
+/* Checkbox mark (checkmark) */
+.check-box .mark {
+    -fx-background-color: transparent;
+    -fx-padding: 6px;
+    -fx-shape: "M 0 4 L 3 7 L 8 0";
+}
+
+.check-box:selected .mark {
+    -fx-background-color: white;
+}
+
+/* Checkbox indeterminate state */
+.check-box:indeterminate .box {
+    -fx-background-color: var(--primary, #2563eb);
+    -fx-border-color: var(--primary, #2563eb);
+}
+
+.check-box:indeterminate .mark {
+    -fx-background-color: white;
+    -fx-shape: "M 0 0 L 8 0 L 8 2 L 0 2 Z";
+    -fx-padding: 4px;
+}
+
+/* Checkbox disabled */
+.check-box:disabled {
+    -fx-opacity: 0.5;
+}
+
+.check-box:disabled .box {
+    -fx-background-color: #f1f5f9;
+    -fx-border-color: #e2e8f0;
+}
+
+/* ============================================
+   RADIO BUTTON CONTROLS
+   ============================================ */
+
+/* Base radio button styling */
+.radio-button {
+    -fx-font-size: var(--text-base, 16px);
+    -fx-font-family: var(--font-primary, 'Segoe UI');
+    -fx-text-fill: var(--text-primary, #1e293b);
+    -fx-spacing: 8px;
+}
+
+/* Radio button circle */
+.radio-button .radio {
+    -fx-background-color: var(--surface, #ffffff);
+    -fx-background-radius: 50%;
+    -fx-border-color: #cbd5e1;
+    -fx-border-width: 2px;
+    -fx-border-radius: 50%;
+    -fx-padding: 10px;
+}
+
+/* Radio button hover */
+.radio-button:hover .radio {
+    -fx-border-color: var(--primary, #2563eb);
+    -fx-cursor: hand;
+}
+
+/* Radio button focused */
+.radio-button:focused .radio {
+    -fx-border-color: var(--primary, #2563eb);
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.15), 6, 0, 0, 0);
+}
+
+/* Radio button selected */
+.radio-button:selected .radio {
+    -fx-border-color: var(--primary, #2563eb);
+    -fx-background-color: var(--surface, #ffffff);
+}
+
+/* Radio button dot (inner circle) */
+.radio-button .dot {
+    -fx-background-color: transparent;
+    -fx-background-radius: 50%;
+    -fx-padding: 5px;
+}
+
+.radio-button:selected .dot {
+    -fx-background-color: var(--primary, #2563eb);
+}
+
+/* Radio button disabled */
+.radio-button:disabled {
+    -fx-opacity: 0.5;
+}
+
+.radio-button:disabled .radio {
+    -fx-background-color: #f1f5f9;
+    -fx-border-color: #e2e8f0;
+}
+
+/* ============================================
+   FORM LABELS
+   ============================================ */
+
+.label {
+    -fx-font-size: var(--text-base, 16px);
+    -fx-font-family: var(--font-primary, 'Segoe UI');
+    -fx-text-fill: var(--text-primary, #1e293b);
+}
+
+.label.form-label {
+    -fx-font-weight: 500;
+    -fx-padding: 0 0 8px 0;
+}
+
+.label.error-label {
+    -fx-text-fill: var(--error, #ef4444);
+    -fx-font-size: var(--text-sm, 14px);
+    -fx-padding: 4px 0 0 0;
+}
+
+.label.helper-text {
+    -fx-text-fill: var(--text-secondary, #64748b);
+    -fx-font-size: var(--text-sm, 14px);
+    -fx-padding: 4px 0 0 0;
+}
+
+/* ============================================
+   FORM GROUPS & CONTAINERS
+   ============================================ */
+
+.form-group {
+    -fx-spacing: 8px;
+    -fx-padding: 0 0 16px 0;
+}
+
+.form-row {
+    -fx-spacing: 16px;
+}
+
+/* ============================================
+   SPINNER CONTROLS
+   ============================================ */
+
+.spinner {
+    -fx-background-color: var(--surface, #ffffff);
+    -fx-background-radius: 8px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+}
+
+.spinner:focused {
+    -fx-border-color: var(--primary, #2563eb);
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.15), 8, 0, 0, 0);
+}
+
+.spinner .text-field {
+    -fx-border-width: 0;
+    -fx-background-radius: 8px 0 0 8px;
+}
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 0;
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+    -fx-background-color: #e2e8f0;
+}
+
+/* ============================================
+   DATE PICKER CONTROLS
+   ============================================ */
+
+.date-picker {
+    -fx-background-color: var(--surface, #ffffff);
+    -fx-background-radius: 8px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+}
+
+.date-picker:focused {
+    -fx-border-color: var(--primary, #2563eb);
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.15), 8, 0, 0, 0);
+}
+
+.date-picker .text-field {
+    -fx-border-width: 0;
+    -fx-background-radius: 8px 0 0 8px;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0 8px 8px 0;
+}
+
+.date-picker-popup {
+    -fx-background-color: var(--surface, #ffffff);
+    -fx-background-radius: 8px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 4);
+}
+
+/* ============================================
+   SMOOTH TRANSITIONS FOR FORM CONTROLS
+   Requirement 7.2: Smooth transitions for state changes
+   ============================================ */
+
+/* Apply smooth transitions to all form controls */
+.text-field,
+.text-area,
+.password-field,
+.combo-box,
+.choice-box,
+.check-box .box,
+.radio-button .radio,
+.spinner,
+.date-picker {
+    -fx-transition: all 0.2s ease;
+}
+
+/* Smooth transitions for hover effects */
+.combo-box-popup .list-view .list-cell,
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-transition: background-color 0.15s ease;
+}

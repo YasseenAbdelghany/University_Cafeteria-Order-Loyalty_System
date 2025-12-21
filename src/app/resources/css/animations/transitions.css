@@ -1,0 +1,304 @@
+/* ============================================
+   ANIMATION SYSTEM - Keyframes & Transitions
+   ============================================ */
+
+/* ============================================
+   KEYFRAME ANIMATIONS
+   ============================================ */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        -fx-opacity: 0;
+    }
+    to {
+        opacity: 1;
+        -fx-opacity: 1;
+    }
+}
+
+/* Fade In with Slide Up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -fx-opacity: 0;
+        -fx-translate-y: 10px;
+    }
+    to {
+        opacity: 1;
+        -fx-opacity: 1;
+        -fx-translate-y: 0;
+    }
+}
+
+/* Fade In with Slide Down */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -fx-opacity: 0;
+        -fx-translate-y: -10px;
+    }
+    to {
+        opacity: 1;
+        -fx-opacity: 1;
+        -fx-translate-y: 0;
+    }
+}
+
+/* Slide In from Left */
+@keyframes slideInLeft {
+    from {
+        -fx-translate-x: -100%;
+        opacity: 0;
+        -fx-opacity: 0;
+    }
+    to {
+        -fx-translate-x: 0;
+        opacity: 1;
+        -fx-opacity: 1;
+    }
+}
+
+/* Slide In from Right */
+@keyframes slideInRight {
+    from {
+        -fx-translate-x: 100%;
+        opacity: 0;
+        -fx-opacity: 0;
+    }
+    to {
+        -fx-translate-x: 0;
+        opacity: 1;
+        -fx-opacity: 1;
+    }
+}
+
+/* Slide In from Top */
+@keyframes slideInTop {
+    from {
+        -fx-translate-y: -100%;
+        opacity: 0;
+        -fx-opacity: 0;
+    }
+    to {
+        -fx-translate-y: 0;
+        opacity: 1;
+        -fx-opacity: 1;
+    }
+}
+
+/* Slide In from Bottom */
+@keyframes slideInBottom {
+    from {
+        -fx-translate-y: 100%;
+        opacity: 0;
+        -fx-opacity: 0;
+    }
+    to {
+        -fx-translate-y: 0;
+        opacity: 1;
+        -fx-opacity: 1;
+    }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        -fx-opacity: 1;
+        -fx-scale-x: 1;
+        -fx-scale-y: 1;
+    }
+    50% {
+        opacity: 0.7;
+        -fx-opacity: 0.7;
+        -fx-scale-x: 1.05;
+        -fx-scale-y: 1.05;
+    }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        -fx-translate-y: 0;
+    }
+    40% {
+        -fx-translate-y: -10px;
+    }
+    60% {
+        -fx-translate-y: -5px;
+    }
+}
+
+/* Shake Animation */
+@keyframes shake {
+    0%, 100% {
+        -fx-translate-x: 0;
+    }
+    10%, 30%, 50%, 70%, 90% {
+        -fx-translate-x: -5px;
+    }
+    20%, 40%, 60%, 80% {
+        -fx-translate-x: 5px;
+    }
+}
+
+/* Rotate Animation */
+@keyframes rotate {
+    from {
+        -fx-rotate: 0deg;
+    }
+    to {
+        -fx-rotate: 360deg;
+    }
+}
+
+/* Scale Up Animation */
+@keyframes scaleUp {
+    from {
+        -fx-scale-x: 0.8;
+        -fx-scale-y: 0.8;
+        opacity: 0;
+        -fx-opacity: 0;
+    }
+    to {
+        -fx-scale-x: 1;
+        -fx-scale-y: 1;
+        opacity: 1;
+        -fx-opacity: 1;
+    }
+}
+
+/* ============================================
+   ANIMATION UTILITY CLASSES
+   ============================================ */
+
+/* Fade In Classes */
+.fade-in {
+    -fx-opacity: 0;
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.fade-in-up {
+    -fx-opacity: 0;
+    animation: fadeInUp 0.3s ease-out forwards;
+}
+
+.fade-in-down {
+    -fx-opacity: 0;
+    animation: fadeInDown 0.3s ease-out forwards;
+}
+
+/* Slide In Classes */
+.slide-in-left {
+    animation: slideInLeft 0.3s ease-out forwards;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.3s ease-out forwards;
+}
+
+.slide-in-top {
+    animation: slideInTop 0.3s ease-out forwards;
+}
+
+.slide-in-bottom {
+    animation: slideInBottom 0.3s ease-out forwards;
+}
+
+/* Pulse Classes */
+.pulse {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.pulse-once {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Bounce Classes */
+.bounce {
+    animation: bounce 1s ease infinite;
+}
+
+.bounce-once {
+    animation: bounce 0.6s ease;
+}
+
+/* Shake Classes */
+.shake {
+    animation: shake 0.5s ease;
+}
+
+/* Rotate Classes */
+.rotate {
+    animation: rotate 1s linear infinite;
+}
+
+.rotate-once {
+    animation: rotate 0.5s ease;
+}
+
+/* Scale Up Classes */
+.scale-up {
+    animation: scaleUp 0.3s ease-out forwards;
+}
+
+/* ============================================
+   ANIMATION DELAYS
+   ============================================ */
+
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+.delay-500 {
+    animation-delay: 0.5s;
+}
+
+/* ============================================
+   ANIMATION DURATIONS
+   ============================================ */
+
+.duration-fast {
+    animation-duration: 0.15s;
+}
+
+.duration-normal {
+    animation-duration: 0.3s;
+}
+
+.duration-slow {
+    animation-duration: 0.5s;
+}
+
+.duration-slower {
+    animation-duration: 0.8s;
+}
+
+/* ============================================
+   REDUCED MOTION SUPPORT
+   ============================================ */
+
+/* Respect user's motion preferences for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

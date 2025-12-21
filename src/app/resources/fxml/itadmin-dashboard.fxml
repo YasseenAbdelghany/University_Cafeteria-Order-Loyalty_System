@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane styleClass="root" stylesheets="@../css/cafeteria-theme.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.gui.controllers.ITAdminDashboardController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <!-- Top Section: Title and Welcome -->
+    <top>
+        <VBox spacing="10.0">
+            <BorderPane.margin>
+                <Insets bottom="20.0" />
+            </BorderPane.margin>
+            
+            <!-- Title -->
+            <Label styleClass="header-label" text="IT Admin Portal" />
+            
+            <!-- Welcome Label -->
+            <Label fx:id="welcomeLabel" text="Welcome, IT Administrator" style="-fx-font-size: 16px;" />
+        </VBox>
+    </top>
+
+    <!-- Center Section: Administrator Table -->
+    <center>
+        <VBox spacing="15.0">
+            <BorderPane.margin>
+                <Insets bottom="20.0" />
+            </BorderPane.margin>
+            
+            <!-- Table Title -->
+            <Label text="System Administrators" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            
+            <!-- Administrators Table -->
+            <TableView fx:id="adminTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="ID" prefWidth="80.0" />
+                    <TableColumn fx:id="usernameColumn" text="Username" prefWidth="200.0" />
+                    <TableColumn fx:id="nameColumn" text="Name" prefWidth="250.0" />
+                </columns>
+            </TableView>
+            
+            <!-- Action Buttons -->
+            <HBox spacing="10.0" alignment="CENTER_LEFT">
+                <Button fx:id="addButton" onAction="#handleAddAdmin" styleClass="primary-button" text="➕ Add Administrator" />
+                <Button fx:id="updateButton" onAction="#handleUpdateAdmin" styleClass="primary-button" text="✏️ Update Administrator" />
+                <Button fx:id="deleteButton" onAction="#handleDeleteAdmin" styleClass="secondary-button" text="🗑️ Delete Administrator" />
+            </HBox>
+        </VBox>
+    </center>
+
+    <!-- Bottom Section: Form Panel (Initially Hidden) -->
+    <bottom>
+        <VBox fx:id="formPanel" spacing="15.0" styleClass="card" visible="false" managed="false">
+            <BorderPane.margin>
+                <Insets top="20.0" />
+            </BorderPane.margin>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            
+            <!-- Form Title -->
+            <Label fx:id="formTitleLabel" text="Administrator Details" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+            
+            <!-- Form Fields -->
+            <HBox spacing="20.0">
+                <!-- Username Field -->
+                <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                    <Label text="Username:" />
+                    <TextField fx:id="usernameFormField" promptText="Enter username" />
+                </VBox>
+                
+                <!-- Name Field -->
+                <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                    <Label text="Name:" />
+                    <TextField fx:id="nameFormField" promptText="Enter full name" />
+                </VBox>
+                
+                <!-- Password Field -->
+                <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                    <Label text="Password:" />
+                    <PasswordField fx:id="passwordFormField" promptText="Enter password" />
+                </VBox>
+            </HBox>
+            
+            <!-- Form Buttons -->
+            <HBox spacing="10.0" alignment="CENTER_LEFT">
+                <Button fx:id="saveButton" onAction="#handleSave" styleClass="primary-button" text="💾 Save" />
+                <Button fx:id="cancelButton" onAction="#handleCancel" styleClass="secondary-button" text="✖ Cancel" />
+            </HBox>
+        </VBox>
+    </bottom>
+
+    <!-- Right Section: Logout Button -->
+    <right>
+        <VBox alignment="TOP_RIGHT">
+            <BorderPane.margin>
+                <Insets left="20.0" />
+            </BorderPane.margin>
+            <Button fx:id="logoutButton" onAction="#handleLogout" styleClass="secondary-button" text="🚪 Logout" />
+        </VBox>
+    </right>
+</BorderPane>

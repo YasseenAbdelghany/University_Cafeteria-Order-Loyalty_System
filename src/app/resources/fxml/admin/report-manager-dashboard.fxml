@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="1080" prefWidth="1920" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="app.gui.admin.controllers.ReportManagerDashboardController"
+            stylesheets="@../../css/themes/admin-theme.css">
+    
+    <top>
+        <VBox styleClass="header">
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Label fx:id="welcomeLabel" text="Report Manager Dashboard" styleClass="header-title">
+                    <font><Font size="24" /></font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="Logout" onAction="#handleLogout" styleClass="secondary-button" />
+            </HBox>
+        </VBox>
+    </top>
+    
+    <center>
+        <VBox spacing="20" styleClass="content-section">
+            <padding><Insets top="20" right="20" bottom="20" left="20" /></padding>
+            
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="Sales Summary" styleClass="section-title">
+                    <font><Font size="20" /></font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="Refresh" onAction="#handleRefresh" styleClass="secondary-button" />
+                <Button text="Export" onAction="#handleExportReport" styleClass="secondary-button" />
+            </HBox>
+            
+            <Separator />
+            
+            <!-- Summary Cards -->
+            <HBox spacing="20" alignment="CENTER">
+                <VBox spacing="5" styleClass="card" HBox.hgrow="ALWAYS">
+                    <padding><Insets top="15" right="15" bottom="15" left="15" /></padding>
+                    <Label text="Total Revenue" styleClass="card-label">
+                        <font><Font size="14" /></font>
+                    </Label>
+                    <Label fx:id="totalRevenueLabel" text="0.00 EGP" styleClass="card-value">
+                        <font><Font size="24" /></font>
+                    </Label>
+                </VBox>
+                
+                <VBox spacing="5" styleClass="card" HBox.hgrow="ALWAYS">
+                    <padding><Insets top="15" right="15" bottom="15" left="15" /></padding>
+                    <Label text="Total Orders" styleClass="card-label">
+                        <font><Font size="14" /></font>
+                    </Label>
+                    <Label fx:id="totalOrdersLabel" text="0" styleClass="card-value">
+                        <font><Font size="24" /></font>
+                    </Label>
+                </VBox>
+                
+                <VBox spacing="5" styleClass="card" HBox.hgrow="ALWAYS">
+                    <padding><Insets top="15" right="15" bottom="15" left="15" /></padding>
+                    <Label text="Loyalty Redemptions" styleClass="card-label">
+                        <font><Font size="14" /></font>
+                    </Label>
+                    <Label fx:id="totalRedemptionsLabel" text="0" styleClass="card-value">
+                        <font><Font size="24" /></font>
+                    </Label>
+                </VBox>
+            </HBox>
+            
+            <Separator />
+            
+            <!-- Sales Breakdown -->
+            <VBox spacing="10" VBox.vgrow="ALWAYS">
+                <Label text="Sales Breakdown by Item" styleClass="section-subtitle">
+                    <font><Font size="16" /></font>
+                </Label>
+                <TextArea fx:id="salesBreakdownArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS">
+                    <font><Font name="Monospaced" size="12" /></font>
+                </TextArea>
+            </VBox>
+            
+            <Separator />
+            
+            <!-- Loyalty Redemption Details -->
+            <VBox spacing="10" VBox.vgrow="ALWAYS">
+                <Label text="Loyalty Program Details" styleClass="section-subtitle">
+                    <font><Font size="16" /></font>
+                </Label>
+                <TextArea fx:id="loyaltyRedemptionArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS">
+                    <font><Font name="Monospaced" size="12" /></font>
+                </TextArea>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,819 @@
+/*
+ * Cafeteria Management System - Theme Stylesheet
+ * This CSS file defines the visual styling for the JavaFX GUI application
+ * matching the terminal's cyan, yellow, magenta, and green color scheme.
+ *
+ * Color Palette:
+ * - Primary (Cyan): #00CED1
+ * - Secondary (Yellow): #FFD700
+ * - Accent (Magenta): #FF00FF
+ * - Success (Green): #00FF00
+ * - Error (Red): #FF0000
+ * - Background: #F5F5F5
+ * - Card Background: #FFFFFF
+ * - Text: #333333
+ */
+
+/* ========================================
+   ROOT AND BASE STYLES
+   ======================================== */
+
+.root {
+    -fx-background-color: #F5F5F5;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-font-size: 14px;
+}
+
+/* ========================================
+   BUTTON STYLES
+   ======================================== */
+
+/* Primary button styling */
+.primary-button {
+    -fx-background-color: linear-gradient(to bottom, #00CED1, #008B8B);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 3, 0, 0, 1);
+}
+
+.primary-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #00FFFF, #00CED1);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 2);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.primary-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #008B8B, #006666);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 2, 0, 0, 0);
+}
+
+.primary-button:disabled {
+    -fx-background-color: #CCCCCC;
+    -fx-opacity: 0.6;
+}
+
+/* Secondary button styling */
+.secondary-button {
+    -fx-background-color: linear-gradient(to bottom, #FFD700, #FFA500);
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 3, 0, 0, 1);
+}
+
+.secondary-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #FFED4E, #FFD700);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 2);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.secondary-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #FFA500, #FF8C00);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 2, 0, 0, 0);
+}
+
+/* Danger button styling */
+.danger-button {
+    -fx-background-color: linear-gradient(to bottom, #FF0000, #CC0000);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 3, 0, 0, 1);
+}
+
+.danger-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #FF3333, #FF0000);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 2);
+}
+
+/* Success button styling */
+.success-button {
+    -fx-background-color: linear-gradient(to bottom, #00FF00, #00CC00);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 3, 0, 0, 1);
+}
+
+.success-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #33FF33, #00FF00);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 2);
+}
+
+/* Accent button styling */
+.accent-button {
+    -fx-background-color: linear-gradient(to bottom, #FF00FF, #CC00CC);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 3, 0, 0, 1);
+}
+
+.accent-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #FF33FF, #FF00FF);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 2);
+}
+
+/* ========================================
+   LABEL STYLES
+   ======================================== */
+
+.label {
+    -fx-text-fill: #333333;
+}
+
+/* Header label styling */
+.header-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00CED1;
+}
+
+/* Subheader label styling */
+.subheader-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #008B8B;
+}
+
+/* Title label styling */
+.title-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* Success message styling */
+.success-message {
+    -fx-text-fill: #00FF00;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* Error message styling */
+.error-message {
+    -fx-text-fill: #FF0000;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* Warning message styling */
+.warning-message {
+    -fx-text-fill: #FFA500;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* Info message styling */
+.info-message {
+    -fx-text-fill: #00CED1;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* ========================================
+   CARD AND CONTAINER STYLES
+   ======================================== */
+
+/* Card styling */
+.card {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+}
+
+/* Badge styling */
+.badge {
+    -fx-background-color: #FFD700;
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+    -fx-padding: 2 8;
+    -fx-background-radius: 10;
+    -fx-font-size: 12px;
+}
+
+/* Badge variants */
+.badge-primary {
+    -fx-background-color: #00CED1;
+    -fx-text-fill: white;
+}
+
+.badge-success {
+    -fx-background-color: #00FF00;
+    -fx-text-fill: #333333;
+}
+
+.badge-error {
+    -fx-background-color: #FF0000;
+    -fx-text-fill: white;
+}
+
+.badge-warning {
+    -fx-background-color: #FFA500;
+    -fx-text-fill: white;
+}
+
+/* Notification badge styling */
+.notification-badge {
+    -fx-background-color: #FF0000;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 2 8;
+    -fx-background-radius: 10;
+    -fx-font-size: 12px;
+    -fx-min-width: 25px;
+    -fx-alignment: center;
+}
+
+/* Secondary text styling */
+.secondary-text {
+    -fx-text-fill: #666666;
+    -fx-font-size: 14px;
+}
+
+/* Info label styling */
+.info-label {
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+}
+
+/* Section title styling */
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00CED1;
+    -fx-padding: 0 0 10 0;
+}
+
+/* Section label styling */
+.section-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00CED1;
+}
+
+/* Header section styling */
+.header-section {
+    -fx-background-color: white;
+    -fx-border-color: #DDDDDD;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* Label bold styling */
+.label-bold {
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* Label small styling */
+.label-small {
+    -fx-font-size: 12px;
+    -fx-text-fill: #666666;
+}
+
+/* Header label small styling */
+.header-label-small {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00CED1;
+}
+
+/* Content area styling */
+.content-area {
+    -fx-background-color: transparent;
+}
+
+/* Footer styling */
+.footer {
+    -fx-background-color: #F5F5F5;
+    -fx-border-color: #DDDDDD;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* ========================================
+   TABLE VIEW STYLES
+   ======================================== */
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #DDDDDD;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #00CED1;
+}
+
+.table-view .column-header {
+    -fx-background-color: #00CED1;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 5;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-view .filler {
+    -fx-background-color: #00CED1;
+}
+
+.table-row-cell {
+    -fx-cell-size: 35px;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #F9F9F9;
+}
+
+.table-row-cell:even {
+    -fx-background-color: white;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #E0F7FA;
+    -fx-cursor: hand;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #B2EBF2;
+    -fx-text-fill: #333333;
+}
+
+.table-row-cell:selected .text {
+    -fx-fill: #333333;
+}
+
+.table-cell {
+    -fx-padding: 5 10;
+    -fx-alignment: center-left;
+}
+
+/* ========================================
+   FORM CONTROL STYLES
+   ======================================== */
+
+/* Text field styling */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-padding: 8;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused {
+    -fx-border-color: #00CED1;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(0,206,209,0.3), 5, 0, 0, 0);
+}
+
+/* Password field styling */
+.password-field {
+    -fx-background-color: white;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-padding: 8;
+    -fx-font-size: 14px;
+}
+
+.password-field:focused {
+    -fx-border-color: #00CED1;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(0,206,209,0.3), 5, 0, 0, 0);
+}
+
+/* Text area styling */
+.text-area {
+    -fx-background-color: white;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-padding: 8;
+}
+
+.text-area:focused {
+    -fx-border-color: #00CED1;
+    -fx-border-width: 2;
+}
+
+.text-area .content {
+    -fx-background-color: white;
+}
+
+/* ComboBox styling */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+}
+
+.combo-box:focused {
+    -fx-border-color: #00CED1;
+    -fx-border-width: 2;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: white;
+    -fx-text-fill: #333333;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #00CED1;
+    -fx-border-width: 1;
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #E0F7FA;
+}
+
+.combo-box-popup .list-view .list-cell:selected {
+    -fx-background-color: #00CED1;
+    -fx-text-fill: white;
+}
+
+/* Spinner styling */
+.spinner {
+    -fx-background-color: white;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+}
+
+.spinner:focused {
+    -fx-border-color: #00CED1;
+    -fx-border-width: 2;
+}
+
+.spinner .text-field {
+    -fx-border-width: 0;
+}
+
+/* CheckBox styling */
+.check-box {
+    -fx-text-fill: #333333;
+}
+
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #00CED1;
+}
+
+.check-box:hover .box {
+    -fx-border-color: #00CED1;
+}
+
+/* RadioButton styling */
+.radio-button {
+    -fx-text-fill: #333333;
+}
+
+.radio-button .radio {
+    -fx-background-color: white;
+    -fx-border-color: #CCCCCC;
+}
+
+.radio-button:selected .dot {
+    -fx-background-color: #00CED1;
+}
+
+.radio-button:hover .radio {
+    -fx-border-color: #00CED1;
+}
+
+/* ========================================
+   LIST VIEW STYLES
+   ======================================== */
+
+.list-view {
+    -fx-background-color: white;
+    -fx-border-color: #DDDDDD;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.list-view .list-cell {
+    -fx-background-color: white;
+    -fx-text-fill: #333333;
+    -fx-padding: 8;
+}
+
+.list-view .list-cell:odd {
+    -fx-background-color: #F9F9F9;
+}
+
+.list-view .list-cell:hover {
+    -fx-background-color: #E0F7FA;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: #00CED1;
+    -fx-text-fill: white;
+}
+
+/* ========================================
+   TAB PANE STYLES
+   ======================================== */
+
+.tab-pane {
+    -fx-background-color: white;
+}
+
+.tab-pane .tab-header-area {
+    -fx-background-color: #F5F5F5;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #DDDDDD;
+    -fx-background-radius: 5 5 0 0;
+    -fx-padding: 8 16;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: white;
+}
+
+.tab-pane .tab:hover {
+    -fx-background-color: #E0F7FA;
+}
+
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+}
+
+.tab-pane .tab-content-area {
+    -fx-background-color: white;
+    -fx-padding: 20;
+}
+
+/* ========================================
+   SCROLL BAR STYLES
+   ======================================== */
+
+.scroll-bar {
+    -fx-background-color: #F5F5F5;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #CCCCCC;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #00CED1;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: #F5F5F5;
+}
+
+/* ========================================
+   DIALOG PANE STYLES
+   ======================================== */
+
+.dialog-pane {
+    -fx-background-color: white;
+    -fx-padding: 20;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #00CED1;
+    -fx-padding: 15;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
+.dialog-pane .content {
+    -fx-padding: 20;
+}
+
+.dialog-pane .button-bar {
+    -fx-padding: 10;
+}
+
+/* ========================================
+   MENU BAR AND MENU STYLES
+   ======================================== */
+
+.menu-bar {
+    -fx-background-color: #00CED1;
+}
+
+.menu-bar .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.menu-item {
+    -fx-background-color: white;
+}
+
+.menu-item:hover {
+    -fx-background-color: #E0F7FA;
+}
+
+.menu-item .label {
+    -fx-text-fill: #333333;
+}
+
+/* ========================================
+   PROGRESS BAR AND INDICATOR STYLES
+   ======================================== */
+
+.progress-bar {
+    -fx-background-color: #DDDDDD;
+    -fx-background-radius: 5;
+}
+
+.progress-bar .bar {
+    -fx-background-color: #00CED1;
+    -fx-background-radius: 5;
+}
+
+.progress-indicator {
+    -fx-progress-color: #00CED1;
+}
+
+/* ========================================
+   SEPARATOR STYLES
+   ======================================== */
+
+.separator .line {
+    -fx-border-color: #DDDDDD;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* ========================================
+   TOOLTIP STYLES
+   ======================================== */
+
+.tooltip {
+    -fx-background-color: #333333;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10;
+    -fx-font-size: 12px;
+}
+
+/* ========================================
+   NOTIFICATION STYLES
+   ======================================== */
+
+/* Notification list styling */
+.notification-list {
+    -fx-background-color: white;
+    -fx-border-color: #DDDDDD;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.notification-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.notification-list .list-cell:hover {
+    -fx-background-color: transparent;
+}
+
+.notification-list .list-cell:selected {
+    -fx-background-color: transparent;
+}
+
+/* Notification cell styling */
+.notification-cell {
+    -fx-background-color: white;
+    -fx-border-color: #DDDDDD;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 10;
+}
+
+.notification-cell:hover {
+    -fx-background-color: #F9F9F9;
+}
+
+/* Unread notification styling */
+.notification-unread {
+    -fx-background-color: #E0F7FA;
+    -fx-border-color: #00CED1;
+    -fx-border-width: 0 0 0 4;
+}
+
+.notification-unread:hover {
+    -fx-background-color: #B2EBF2;
+}
+
+/* Notification type badge styling */
+.notification-type {
+    -fx-background-color: #DDDDDD;
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+    -fx-padding: 3 8;
+    -fx-background-radius: 3;
+    -fx-font-size: 11px;
+}
+
+.type-order-ready {
+    -fx-background-color: #00FF00;
+    -fx-text-fill: #333333;
+}
+
+.type-sale {
+    -fx-background-color: #FFD700;
+    -fx-text-fill: #333333;
+}
+
+.type-general {
+    -fx-background-color: #00CED1;
+    -fx-text-fill: white;
+}
+
+/* Notification date styling */
+.notification-date {
+    -fx-text-fill: #666666;
+    -fx-font-size: 12px;
+}
+
+/* Read status styling */
+.status-read {
+    -fx-text-fill: #00FF00;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.status-unread {
+    -fx-text-fill: #FF0000;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/* Notification message styling */
+.notification-message {
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+    -fx-padding: 5 0 0 0;
+}
+
+.message-unread {
+    -fx-font-weight: bold;
+}
+
+/* Empty message styling */
+.empty-message {
+    -fx-text-fill: #999999;
+    -fx-font-size: 16px;
+    -fx-font-style: italic;
+    -fx-padding: 20;
+}
+
+/* ========================================
+   METRIC VALUE STYLES
+   ======================================== */
+
+/* Metric value styling for dashboard cards */
+.metric-value {
+    -fx-text-fill: #00CED1;
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
+}

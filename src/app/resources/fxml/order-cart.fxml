@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="app.gui.controllers.OrderCartController"
+      styleClass="root" stylesheets="@../css/cafeteria-theme.css"
+      spacing="20" alignment="CENTER">
+    
+    <padding>
+        <Insets top="30" right="40" bottom="30" left="40"/>
+    </padding>
+    
+    <!-- Header -->
+    <VBox alignment="CENTER" spacing="10">
+        <Label text="Order Summary &amp; Payment" styleClass="header-label"/>
+        <Label fx:id="studentInfoLabel" text="Student: Loading..." styleClass="subheader-label"/>
+    </VBox>
+    
+    <!-- Order Summary Card -->
+    <VBox styleClass="card" spacing="15" VBox.vgrow="ALWAYS" maxWidth="600">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+        
+        <Label text="Order Items" styleClass="section-label"/>
+        
+        <!-- Cart Items List -->
+        <ListView fx:id="orderItemsListView" prefHeight="200" VBox.vgrow="ALWAYS"/>
+        
+        <Separator/>
+        
+        <!-- Order Totals -->
+        <VBox spacing="10">
+            <HBox spacing="10">
+                <Label text="Subtotal:" styleClass="label-bold"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="subtotalLabel" text="0.00 EGP" styleClass="label-bold"/>
+            </HBox>
+            
+            <HBox spacing="10">
+                <Label text="Discount:" styleClass="label-bold"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="discountLabel" text="0.00 EGP" styleClass="success-message"/>
+            </HBox>
+            
+            <Separator/>
+            
+            <HBox spacing="10">
+                <Label text="Final Total:" styleClass="header-label-small"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="totalLabel" text="0.00 EGP" styleClass="header-label-small"/>
+            </HBox>
+        </VBox>
+        
+        <Separator/>
+        
+        <!-- Payment Method Selection -->
+        <VBox spacing="10">
+            <Label text="Select Payment Method" styleClass="section-label"/>
+            <ComboBox fx:id="paymentMethodComboBox" promptText="Choose payment method..." 
+                      maxWidth="Infinity"/>
+        </VBox>
+        
+        <!-- Action Buttons -->
+        <HBox spacing="15" alignment="CENTER">
+            <Button text="Cancel" onAction="#handleCancel" 
+                    styleClass="secondary-button" prefWidth="150"/>
+            <Button text="Confirm Payment" onAction="#handleConfirmPayment" 
+                    styleClass="primary-button" prefWidth="150"/>
+        </HBox>
+    </VBox>
+    
+</VBox>

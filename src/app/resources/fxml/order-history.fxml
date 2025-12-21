@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="app.gui.controllers.OrderHistoryController"
+      styleClass="root" stylesheets="@../css/cafeteria-theme.css"
+      spacing="20">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <!-- Title Section -->
+    <VBox styleClass="card" spacing="10">
+        <padding>
+            <Insets top="15" right="15" bottom="15" left="15"/>
+        </padding>
+        
+        <Label text="📋 Order History" styleClass="header-label"/>
+        <Label text="View your past orders and their status" styleClass="secondary-text"/>
+    </VBox>
+    
+    <!-- Table Section -->
+    <VBox VBox.vgrow="ALWAYS" styleClass="card">
+        <padding>
+            <Insets top="15" right="15" bottom="15" left="15"/>
+        </padding>
+        
+        <TableView fx:id="orderHistoryTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="orderCodeColumn" text="Order Code" prefWidth="150"/>
+                <TableColumn fx:id="orderDateColumn" text="Date" prefWidth="180"/>
+                <TableColumn fx:id="totalAmountColumn" text="Total Amount" prefWidth="120"/>
+                <TableColumn fx:id="paymentMethodColumn" text="Payment Method" prefWidth="150"/>
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="120"/>
+            </columns>
+        </TableView>
+    </VBox>
+    
+    <!-- Bottom Section - Back Button -->
+    <HBox alignment="CENTER">
+        <Button fx:id="backButton" text="← Back to Dashboard" 
+                onAction="#handleBack" styleClass="secondary-button" 
+                prefWidth="200"/>
+    </HBox>
+    
+</VBox>

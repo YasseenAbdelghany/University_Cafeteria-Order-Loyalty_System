@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="app.gui.controllers.StudentLoginController"
+      alignment="CENTER" spacing="20" styleClass="root">
+    
+    <padding>
+        <Insets top="30" right="40" bottom="30" left="40"/>
+    </padding>
+    
+    <!-- Title -->
+    <Label text="Student Portal" styleClass="header-label">
+        <font>
+            <Font name="System Bold" size="28"/>
+        </font>
+    </Label>
+    
+    <!-- TabPane for Login and Register -->
+    <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" styleClass="card">
+        <tabs>
+            <!-- Login Tab -->
+            <Tab text="Login">
+                <VBox alignment="CENTER" spacing="15">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+                    
+                    <Label text="Enter your student code to login">
+                        <font>
+                            <Font size="14"/>
+                        </font>
+                    </Label>
+                    
+                    <VBox spacing="8">
+                        <Label text="Student Code:">
+                            <font>
+                                <Font size="12"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="loginStudentCodeField" 
+                                   promptText="e.g., st001" 
+                                   prefWidth="300"/>
+                    </VBox>
+                    
+                    <Button fx:id="loginButton" 
+                            text="Login" 
+                            onAction="#handleLogin" 
+                            styleClass="primary-button"
+                            prefWidth="150">
+                        <font>
+                            <Font size="14"/>
+                        </font>
+                    </Button>
+                </VBox>
+            </Tab>
+            
+            <!-- Register Tab -->
+            <Tab text="Register">
+                <VBox alignment="CENTER" spacing="15">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+                    
+                    <Label text="Create a new student account">
+                        <font>
+                            <Font size="14"/>
+                        </font>
+                    </Label>
+                    
+                    <VBox spacing="8">
+                        <Label text="Name:">
+                            <font>
+                                <Font size="12"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="registerNameField" 
+                                   promptText="Enter your full name" 
+                                   prefWidth="300"/>
+                    </VBox>
+                    
+                    <VBox spacing="8">
+                        <Label text="Phone Number:">
+                            <font>
+                                <Font size="12"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="registerPhoneField" 
+                                   promptText="Enter your phone number" 
+                                   prefWidth="300"/>
+                    </VBox>
+                    
+                    <Button fx:id="registerButton" 
+                            text="Register" 
+                            onAction="#handleRegister" 
+                            styleClass="primary-button"
+                            prefWidth="150">
+                        <font>
+                            <Font size="14"/>
+                        </font>
+                    </Button>
+                </VBox>
+            </Tab>
+        </tabs>
+    </TabPane>
+    
+    <!-- Back Button -->
+    <Button fx:id="backButton" 
+            text="← Back to Main Menu" 
+            onAction="#handleBack" 
+            styleClass="secondary-button"
+            prefWidth="200">
+        <font>
+            <Font size="13"/>
+        </font>
+    </Button>
+    
+</VBox>

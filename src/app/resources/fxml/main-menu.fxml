@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="30.0" styleClass="root" stylesheets="@../css/cafeteria-theme.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.gui.controllers.MainMenuController">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+    </padding>
+    
+    <!-- Welcome Banner -->
+    <Label styleClass="header-label" text="🍽️ Cafeteria Management System" textAlignment="CENTER">
+        <font>
+            <Font name="System Bold" size="32.0" />
+        </font>
+    </Label>
+    
+    <Label text="Welcome! Please select your portal:" textAlignment="CENTER">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Label>
+    
+    <!-- Main Portal Buttons in 2x2 Grid -->
+    <GridPane hgap="20.0" vgap="20.0" alignment="CENTER">
+        <!-- Row 0, Column 0: Student Portal -->
+        <Button fx:id="studentButton" onAction="#handleStudentPortal" prefHeight="120.0" prefWidth="250.0" styleClass="primary-button" text="👨‍🎓 Student Portal" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+        
+        <!-- Row 0, Column 1: Admin Portal -->
+        <Button fx:id="adminButton" onAction="#handleAdminPortal" prefHeight="120.0" prefWidth="250.0" styleClass="primary-button" text="👔 Admin Dashboard" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+        
+        <!-- Row 1, Column 0: Service Manager Portal -->
+        <Button fx:id="servicesButton" onAction="#handleServicesPortal" prefHeight="120.0" prefWidth="250.0" styleClass="primary-button" text="🔧 Service Manager" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+        
+        <!-- Row 1, Column 1: IT Admin Portal -->
+        <Button fx:id="itAdminButton" onAction="#handleITAdminPortal" prefHeight="120.0" prefWidth="250.0" styleClass="primary-button" text="💻 IT Admin Portal" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+    </GridPane>
+    
+    <!-- Exit Button -->
+    <Button fx:id="exitButton" onAction="#handleExit" prefWidth="200.0" styleClass="secondary-button" text="🚪 Exit">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Button>
+</VBox>

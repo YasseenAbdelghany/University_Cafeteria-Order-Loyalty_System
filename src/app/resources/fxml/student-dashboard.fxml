@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="app.gui.controllers.StudentDashboardController"
+            styleClass="root" stylesheets="@../css/cafeteria-theme.css">
+    
+    <!-- Header Section -->
+    <top>
+        <VBox styleClass="card" spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            
+            <!-- Welcome and Student Code -->
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label fx:id="welcomeLabel" text="Welcome, Student" styleClass="header-label"/>
+                <Label fx:id="studentCodeLabel" text="Code: " styleClass="secondary-text"/>
+            </HBox>
+            
+            <!-- Loyalty Points and Notifications -->
+            <HBox spacing="30" alignment="CENTER_LEFT">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Loyalty Points:" styleClass="info-label"/>
+                    <Label fx:id="loyaltyPointsLabel" text="0" styleClass="badge"/>
+                </HBox>
+                
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Notifications:" styleClass="info-label"/>
+                    <Label fx:id="notificationBadgeLabel" text="0" styleClass="notification-badge"/>
+                </HBox>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <!-- Main Content - Action Buttons -->
+    <center>
+        <VBox spacing="15" alignment="TOP_CENTER" styleClass="content-area">
+            <padding>
+                <Insets top="30" right="20" bottom="20" left="20"/>
+            </padding>
+            
+            <Label text="What would you like to do?" styleClass="section-title"/>
+            
+            <Button fx:id="viewMenuButton" text="🍽️ View Menu &amp; Place Order" 
+                    onAction="#handleViewMenu" styleClass="primary-button" 
+                    maxWidth="Infinity" prefHeight="50"/>
+            
+            <Button fx:id="checkPointsButton" text="⭐ Check Loyalty Points" 
+                    onAction="#handleCheckPoints" styleClass="primary-button" 
+                    maxWidth="Infinity" prefHeight="50"/>
+            
+            <Button fx:id="orderHistoryButton" text="📋 View Order History" 
+                    onAction="#handleOrderHistory" styleClass="primary-button" 
+                    maxWidth="Infinity" prefHeight="50"/>
+            
+            <Button fx:id="notificationsButton" text="🔔 View Notifications" 
+                    onAction="#handleNotifications" styleClass="primary-button" 
+                    maxWidth="Infinity" prefHeight="50"/>
+        </VBox>
+    </center>
+    
+    <!-- Bottom Section - Logout Button -->
+    <bottom>
+        <HBox alignment="CENTER" styleClass="footer">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            
+            <Button fx:id="logoutButton" text="Logout" 
+                    onAction="#handleLogout" styleClass="secondary-button" 
+                    prefWidth="150"/>
+        </HBox>
+    </bottom>
+    
+</BorderPane>

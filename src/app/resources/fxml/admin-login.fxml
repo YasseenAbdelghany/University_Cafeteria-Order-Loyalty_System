@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" styleClass="root" stylesheets="@../css/cafeteria-theme.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.gui.controllers.AdminLoginController">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+    </padding>
+    
+    <!-- Title -->
+    <Label styleClass="header-label" text="👔 Admin Login" textAlignment="CENTER">
+        <font>
+            <Font name="System Bold" size="28.0" />
+        </font>
+    </Label>
+    
+    <Label text="Please enter your administrator credentials" textAlignment="CENTER">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </Label>
+    
+    <!-- Login Form Card -->
+    <VBox alignment="CENTER" spacing="15.0" styleClass="card" maxWidth="400.0">
+        <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+        </padding>
+        
+        <!-- Username Field -->
+        <Label text="Username:">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <TextField fx:id="usernameField" promptText="Enter username" prefWidth="340.0">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </TextField>
+        
+        <!-- Password Field -->
+        <Label text="Password:">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <PasswordField fx:id="passwordField" promptText="Enter password" prefWidth="340.0">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </PasswordField>
+        
+        <!-- Login Button -->
+        <Button fx:id="loginButton" onAction="#handleLogin" prefWidth="340.0" styleClass="primary-button" text="🔐 Login">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+        </Button>
+    </VBox>
+    
+    <!-- Back Button -->
+    <Button fx:id="backButton" onAction="#handleBack" prefWidth="200.0" styleClass="secondary-button" text="⬅️ Back to Main Menu">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Button>
+</VBox>

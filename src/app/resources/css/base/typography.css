@@ -1,0 +1,145 @@
+/* ============================================
+   Typography Styles
+   Font definitions and text styles
+   ============================================ */
+
+/* Base text styles */
+.root {
+    -fx-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    -fx-font-size: 16px;
+    -fx-text-fill: #1e293b;
+}
+
+/* Heading styles */
+.heading-1 {
+    -fx-font-family: "Segoe UI Semibold", sans-serif;
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+.heading-2 {
+    -fx-font-family: "Segoe UI Semibold", sans-serif;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+.heading-3 {
+    -fx-font-family: "Segoe UI Semibold", sans-serif;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+.heading-4 {
+    -fx-font-family: "Segoe UI Semibold", sans-serif;
+    -fx-font-size: 20px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #1e293b;
+}
+
+.heading-5 {
+    -fx-font-family: "Segoe UI Semibold", sans-serif;
+    -fx-font-size: 18px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #1e293b;
+}
+
+.heading-6 {
+    -fx-font-family: "Segoe UI Semibold", sans-serif;
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #1e293b;
+}
+
+/* Text size utilities */
+.text-xs {
+    -fx-font-size: 12px;
+}
+
+.text-sm {
+    -fx-font-size: 14px;
+}
+
+.text-base {
+    -fx-font-size: 16px;
+}
+
+.text-lg {
+    -fx-font-size: 18px;
+}
+
+.text-xl {
+    -fx-font-size: 20px;
+}
+
+.text-2xl {
+    -fx-font-size: 24px;
+}
+
+.text-3xl {
+    -fx-font-size: 30px;
+}
+
+.text-4xl {
+    -fx-font-size: 36px;
+}
+
+/* Font weight utilities */
+.font-normal {
+    -fx-font-weight: normal;
+}
+
+.font-medium {
+    -fx-font-weight: 500;
+}
+
+.font-semibold {
+    -fx-font-weight: 600;
+}
+
+.font-bold {
+    -fx-font-weight: bold;
+}
+
+/* Text color utilities */
+.text-primary {
+    -fx-text-fill: #1e293b;
+}
+
+.text-secondary {
+    -fx-text-fill: #64748b;
+}
+
+.text-muted {
+    -fx-text-fill: #94a3b8;
+}
+
+.text-white {
+    -fx-text-fill: white;
+}
+
+/* Monospace text */
+.text-mono {
+    -fx-font-family: "Consolas", "Courier New", monospace;
+}
+
+/* Label specific styles */
+.label {
+    -fx-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    -fx-font-size: 16px;
+    -fx-text-fill: #1e293b;
+}
+
+.label.secondary {
+    -fx-text-fill: #64748b;
+}
+
+.label.small {
+    -fx-font-size: 14px;
+}
+
+.label.large {
+    -fx-font-size: 18px;
+}

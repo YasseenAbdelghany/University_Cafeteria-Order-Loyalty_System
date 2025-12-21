@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="1080" prefWidth="1920" spacing="25.0" styleClass="root" stylesheets="@../../css/themes/admin-theme.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.gui.admin.controllers.ReportsController">
+    <padding>
+        <Insets bottom="60.0" left="80.0" right="80.0" top="60.0" />
+    </padding>
+    
+    <!-- Title -->
+    <Label styleClass="header-label" text="📊 System Reports" textAlignment="CENTER">
+        <font>
+            <Font name="System Bold" size="32.0" />
+        </font>
+    </Label>
+    
+    <!-- Dashboard Cards Grid -->
+    <VBox spacing="20.0" maxWidth="900.0">
+        <!-- First Row -->
+        <HBox spacing="20.0" alignment="CENTER">
+            <!-- Total Revenue Card -->
+            <VBox alignment="CENTER" spacing="10.0" styleClass="card" prefWidth="420.0" prefHeight="120.0">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+                <Label text="💰 Total Revenue" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="totalRevenueLabel" text="0.00" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+            </VBox>
+            
+            <!-- Total Students Card -->
+            <VBox alignment="CENTER" spacing="10.0" styleClass="card" prefWidth="420.0" prefHeight="120.0">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+                <Label text="👨‍🎓 Total Students" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="totalStudentsLabel" text="0" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+            </VBox>
+        </HBox>
+        
+        <!-- Second Row -->
+        <HBox spacing="20.0" alignment="CENTER">
+            <!-- Total Menu Items Card -->
+            <VBox alignment="CENTER" spacing="10.0" styleClass="card" prefWidth="420.0" prefHeight="120.0">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+                <Label text="🍔 Total Menu Items" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="totalMenuItemsLabel" text="0" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+            </VBox>
+            
+            <!-- Total Orders Card -->
+            <VBox alignment="CENTER" spacing="10.0" styleClass="card" prefWidth="420.0" prefHeight="120.0">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+                <Label text="📦 Total Orders" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="totalOrdersLabel" text="0" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+            </VBox>
+        </HBox>
+    </VBox>
+    
+    <!-- Manager Statistics Section -->
+    <VBox alignment="CENTER" spacing="15.0" styleClass="card" maxWidth="900.0">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        </padding>
+        
+        <Label text="👥 Manager Statistics" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        
+        <!-- Manager Statistics Table -->
+        <TableView fx:id="managerStatsTable" prefHeight="250.0" styleClass="table-view">
+            <columns>
+                <TableColumn fx:id="managerTypeColumn" prefWidth="400.0" text="Manager Type" />
+                <TableColumn fx:id="managerCountColumn" prefWidth="200.0" text="Count" />
+            </columns>
+        </TableView>
+    </VBox>
+    
+    <!-- Back Button -->
+    <Button fx:id="backButton" onAction="#handleBack" prefWidth="200.0" styleClass="secondary-button" text="⬅️ Back to Dashboard">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Button>
+</VBox>

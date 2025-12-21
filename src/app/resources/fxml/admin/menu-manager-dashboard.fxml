@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="1080" prefWidth="1920" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="app.gui.admin.controllers.MenuManagerDashboardController"
+            stylesheets="@../../css/themes/admin-theme.css">
+    
+    <top>
+        <VBox styleClass="header">
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Label fx:id="welcomeLabel" text="Menu Manager Dashboard" styleClass="header-title">
+                    <font><Font size="24" /></font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="Logout" onAction="#handleLogout" styleClass="secondary-button" />
+            </HBox>
+        </VBox>
+    </top>
+    
+    <center>
+        <SplitPane dividerPositions="0.6">
+            <VBox spacing="10" styleClass="content-section">
+                <padding><Insets top="20" right="20" bottom="20" left="20" /></padding>
+                
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="Menu Items" styleClass="section-title">
+                        <font><Font size="18" /></font>
+                    </Label>
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button text="Refresh" onAction="#handleLoadMenu" styleClass="secondary-button" />
+                </HBox>
+                
+                <TableView fx:id="menuTable" VBox.vgrow="ALWAYS" styleClass="table-view">
+                    <columns>
+                        <TableColumn fx:id="idColumn" text="ID" prefWidth="60" />
+                        <TableColumn fx:id="nameColumn" text="Name" prefWidth="180" />
+                        <TableColumn fx:id="priceColumn" text="Price (EGP)" prefWidth="100" />
+                        <TableColumn fx:id="categoryColumn" text="Category" prefWidth="120" />
+                        <TableColumn fx:id="statusColumn" text="Status" prefWidth="90" />
+                    </columns>
+                </TableView>
+            </VBox>
+            
+            <VBox spacing="15" styleClass="content-section">
+                <padding><Insets top="20" right="20" bottom="20" left="20" /></padding>
+                
+                <Label text="Item Management" styleClass="section-title">
+                    <font><Font size="18" /></font>
+                </Label>
+                
+                <Separator />
+                
+                <GridPane hgap="10" vgap="10">
+                    <Label text="Item ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label" />
+                    <TextField fx:id="itemIdField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="text-field" />
+                    
+                    <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label" />
+                    <TextField fx:id="itemNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="text-field" />
+                    
+                    <Label text="Price:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="form-label" />
+                    <TextField fx:id="priceField" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="text-field" />
+                    
+                    <Label text="Category:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="form-label" />
+                    <TextField fx:id="categoryField" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="text-field" />
+                    
+                    <Label text="Available:" GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="form-label" />
+                    <CheckBox fx:id="availableCheckBox" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="80" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                    </columnConstraints>
+                </GridPane>
+                
+                <Label text="Description:" />
+                <TextArea fx:id="descriptionArea" wrapText="true" prefRowCount="3" styleClass="text-area" />
+                
+                <HBox spacing="10">
+                    <Button text="Add Item" onAction="#handleAddItem" styleClass="primary-button" HBox.hgrow="ALWAYS" />
+                    <Button text="Update" onAction="#handleUpdateItem" styleClass="primary-button" HBox.hgrow="ALWAYS" />
+                </HBox>
+                
+                <HBox spacing="10">
+                    <Button text="Toggle Active/Inactive" onAction="#handleToggleActive" styleClass="secondary-button" HBox.hgrow="ALWAYS" />
+                    <Button text="Remove" onAction="#handleRemoveItem" styleClass="danger-button" HBox.hgrow="ALWAYS" />
+                </HBox>
+                
+                <Button text="Clear" onAction="#handleClear" styleClass="secondary-button" maxWidth="Infinity" />
+            </VBox>
+        </SplitPane>
+    </center>
+</BorderPane>

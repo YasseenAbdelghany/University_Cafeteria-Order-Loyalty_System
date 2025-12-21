@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="1080" prefWidth="1920" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="app.gui.admin.controllers.StudentManagerDashboardController"
+            stylesheets="@../../css/themes/admin-theme.css">
+    
+    <!-- Top Bar -->
+    <top>
+        <VBox styleClass="header">
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Label fx:id="welcomeLabel" text="Student Manager Dashboard" styleClass="header-title">
+                    <font><Font size="24" /></font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="Logout" onAction="#handleLogout" styleClass="secondary-button" />
+            </HBox>
+        </VBox>
+    </top>
+    
+    <!-- Main Content -->
+    <center>
+        <SplitPane dividerPositions="0.6">
+            <!-- Left: Students Table -->
+            <VBox spacing="10" styleClass="content-section">
+                <padding><Insets top="20" right="20" bottom="20" left="20" /></padding>
+                
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="All Students" styleClass="section-title">
+                        <font><Font size="18" /></font>
+                    </Label>
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button text="Refresh" onAction="#handleLoadStudents" styleClass="secondary-button" />
+                </HBox>
+                
+                <TableView fx:id="studentsTable" VBox.vgrow="ALWAYS" styleClass="table-view">
+                    <columns>
+                        <TableColumn fx:id="idColumn" text="ID" prefWidth="60" />
+                        <TableColumn fx:id="nameColumn" text="Name" prefWidth="150" />
+                        <TableColumn fx:id="emailColumn" text="Student Code" prefWidth="120" />
+                        <TableColumn fx:id="phoneColumn" text="Phone" prefWidth="120" />
+                        <TableColumn fx:id="pointsColumn" text="Points" prefWidth="80" />
+                    </columns>
+                </TableView>
+            </VBox>
+            
+            <!-- Right: Student Management -->
+            <VBox spacing="15" styleClass="content-section">
+                <padding><Insets top="20" right="20" bottom="20" left="20" /></padding>
+                
+                <Label text="Student Management" styleClass="section-title">
+                    <font><Font size="18" /></font>
+                </Label>
+                
+                <Separator />
+                
+                <GridPane hgap="10" vgap="10">
+                    <Label text="Student ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label" />
+                    <TextField fx:id="studentIdField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="text-field" />
+                    
+                    <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label" />
+                    <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="text-field" />
+                    
+                    <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="form-label" />
+                    <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="text-field" />
+                    
+                    <Label text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="form-label" />
+                    <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="text-field" />
+                    
+                    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="form-label" />
+                    <TextField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="text-field" />
+                    
+                    <Label text="Points:" GridPane.columnIndex="0" GridPane.rowIndex="5" styleClass="form-label" />
+                    <TextField fx:id="pointsField" GridPane.columnIndex="1" GridPane.rowIndex="5" styleClass="text-field" />
+                    
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="80" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                    </columnConstraints>
+                </GridPane>
+                
+                <HBox spacing="10">
+                    <Button text="Register" onAction="#handleRegisterStudent" styleClass="primary-button" HBox.hgrow="ALWAYS" />
+                    <Button text="Update" onAction="#handleUpdateStudent" styleClass="primary-button" HBox.hgrow="ALWAYS" />
+                    <Button text="Delete" onAction="#handleDeleteStudent" styleClass="danger-button" HBox.hgrow="ALWAYS" />
+                </HBox>
+                
+                <HBox spacing="10">
+                    <Button text="Send Points" onAction="#handleSendPoints" styleClass="secondary-button" HBox.hgrow="ALWAYS" />
+                    <Button text="Clear" onAction="#handleClear" styleClass="secondary-button" HBox.hgrow="ALWAYS" />
+                </HBox>
+                
+                <Separator />
+                
+                <Label text="Broadcast Points to All Students" styleClass="section-subtitle">
+                    <font><Font size="14" /></font>
+                </Label>
+                
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Points:" styleClass="form-label" />
+                    <TextField fx:id="broadcastPointsField" promptText="Enter points" HBox.hgrow="ALWAYS" styleClass="text-field" />
+                    <Button text="Broadcast" onAction="#handleBroadcastPoints" styleClass="primary-button" />
+                </HBox>
+            </VBox>
+        </SplitPane>
+    </center>
+</BorderPane>

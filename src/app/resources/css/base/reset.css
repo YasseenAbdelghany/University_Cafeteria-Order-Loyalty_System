@@ -1,0 +1,72 @@
+/* ============================================
+   CSS Reset and Normalization
+   Ensures consistent rendering across platforms
+   ============================================ */
+
+/* Reset default JavaFX styles */
+.root {
+    -fx-background-color: white;
+    -fx-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    -fx-font-size: 16px;
+}
+
+/* Remove default padding and margins */
+.label,
+.text,
+.button,
+.text-field,
+.text-area,
+.combo-box,
+.choice-box,
+.check-box,
+.radio-button {
+    -fx-padding: 0;
+}
+
+/* Reset button styles */
+.button {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+}
+
+/* Reset text field styles */
+.text-field,
+.text-area {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+}
+
+/* Reset table view styles */
+.table-view {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+/* Reset scroll pane */
+.scroll-pane {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+/* Remove focus indicators (we'll add custom ones) */
+.button:focused,
+.text-field:focused,
+.text-area:focused,
+.combo-box:focused,
+.choice-box:focused {
+    -fx-background-insets: 0;
+}
+
+/* Reset list view */
+.list-view {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+/* Reset combo box */
+.combo-box-base {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}

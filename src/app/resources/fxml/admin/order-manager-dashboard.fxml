@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="1080" prefWidth="1920" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="app.gui.admin.controllers.OrderManagerDashboardController"
+            stylesheets="@../../css/themes/admin-theme.css">
+    
+    <top>
+        <VBox styleClass="header">
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <Label fx:id="welcomeLabel" text="Order Manager Dashboard" styleClass="header-title">
+                    <font><Font size="24" /></font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="Logout" onAction="#handleLogout" styleClass="secondary-button" />
+            </HBox>
+        </VBox>
+    </top>
+    
+    <center>
+        <SplitPane dividerPositions="0.6">
+            <VBox spacing="10" styleClass="content-section">
+                <padding><Insets top="20" right="20" bottom="20" left="20" /></padding>
+                
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="Pending Orders" styleClass="section-title">
+                        <font><Font size="18" /></font>
+                    </Label>
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button text="Refresh" onAction="#handleLoadOrders" styleClass="secondary-button" />
+                </HBox>
+                
+                <TableView fx:id="ordersTable" VBox.vgrow="ALWAYS" styleClass="table-view">
+                    <columns>
+                        <TableColumn fx:id="orderIdColumn" text="Order ID" prefWidth="80" />
+                        <TableColumn fx:id="studentIdColumn" text="Student Code" prefWidth="120" />
+                        <TableColumn fx:id="totalColumn" text="Total (EGP)" prefWidth="100" />
+                        <TableColumn fx:id="statusColumn" text="Status" prefWidth="120" />
+                        <TableColumn fx:id="dateColumn" text="Order Code" prefWidth="130" />
+                    </columns>
+                </TableView>
+            </VBox>
+            
+            <VBox spacing="15" styleClass="content-section">
+                <padding><Insets top="20" right="20" bottom="20" left="20" /></padding>
+                
+                <Label text="Order Details" styleClass="section-title">
+                    <font><Font size="18" /></font>
+                </Label>
+                
+                <Separator />
+                
+                <TextArea fx:id="orderDetailsArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS" />
+                
+                <Separator />
+                
+                <Label text="Update Status" styleClass="section-subtitle">
+                    <font><Font size="14" /></font>
+                </Label>
+                
+                <ComboBox fx:id="statusComboBox" promptText="Select Status" maxWidth="Infinity" styleClass="combo-box" />
+                
+                <HBox spacing="10">
+                    <Button text="Mark Preparing" onAction="#handleMarkPreparing" styleClass="primary-button" HBox.hgrow="ALWAYS" />
+                    <Button text="Mark Ready" onAction="#handleMarkReady" styleClass="primary-button" HBox.hgrow="ALWAYS" />
+                </HBox>
+                
+                <Button text="Update Status" onAction="#handleUpdateStatus" styleClass="secondary-button" maxWidth="Infinity" />
+            </VBox>
+        </SplitPane>
+    </center>
+</BorderPane>
